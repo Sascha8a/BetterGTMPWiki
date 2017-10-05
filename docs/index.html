@@ -1,20 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <meta name="description" content="Description">
+  <title>GT-MP Wiki</title>
+  <meta name='keywords' content='GTA 5, GTA V, Multiplaye, Mod, Grand Theft Auto, V, 5'>
+  <meta name='language' content='en'>
+  <meta name='description' content='Grand Theft Multiplayer is a free alternative multiplayer modification for Grand Theft Auto V, giving you the possibility
+  to play with hundreds of players on dedicated servers with custom gamemodes built from the ground up and modified
+  game experiences.'>
+
+  <!-- Android  -->
+  <meta name="theme-color" content="#50a7ff">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Apple -->
+  <meta name="apple-mobile-web-app-title" content="GT-MP Wiki">
+  <meta name='apple-mobile-web-app-capable' content='yes'>
+  <meta name='apple-touch-fullscreen' content='yes'>
+  <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
+  <meta name='format-detection' content='telephone=no'>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GT-MP Wiki" />
+  <meta property="og:site_name" content="GT-MP" />
+  <meta property="og:url" content="https://wiki.gt-mp.net/" />
+  <meta property="og:image" content="images/icons/icon-512x512.png" />
+
+  <!-- UC Mobile Browser  -->
+  <meta name="full-screen" content="yes">
+  <meta name="browsermode" content="application">
+
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
+  <link rel="manifest" href="/manifest.json">
 </head>
+
 <body>
   <div id="app"></div>
 </body>
 <script>
   window.$docsify = {
-    name: '',
-    repo: ''
+    auto2top: true,
+    search: {
+      placeholder: 'Type to search...',
+      noData: 'No Results!'
+    },
+    name: 'Better GT-MP Wiki',
+    maxLevel: 3,
+    subMaxLevel: 2,
+    loadSidebar: true,
+    coverpage: true,
+    autoHeader: true,
+    repo: 'Sascha8a/BetterGTMPWiki',
+    formatUpdated: '{DD}.{MM}.{YYYY} {HH}:{mm}',
+    plugins: [
+      function (hook, vm) {
+        hook.beforeEach(function (html) {
+          var url = 'https://github.com/QingWei-Li/docsify/blob/master/docs/' + vm.route.file
+          var editHtml = '[:memo: Edit on Github](' + url + ')\n'
+          return editHtml
+            + html
+            + '\n----\n'
+            + 'Last modified {docsify-updated} '
+        })
+      }
+    ]
   }
+
 </script>
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-csharp.min.js"></script>
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
+
 </html>

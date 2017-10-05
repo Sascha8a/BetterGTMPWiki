@@ -1,3 +1,7 @@
+# Temporary files
+temp
+errors
+
 # Logs
 logs
 *.log
