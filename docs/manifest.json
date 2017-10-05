@@ -12,7 +12,7 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "start_url": "/#/README",
+  "start_url": "/?homescreen",
   "orientation": "",
   "display": "standalone",
   "theme_color": "#50a7ff",
