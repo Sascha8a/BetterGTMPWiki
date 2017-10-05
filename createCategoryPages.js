@@ -4,6 +4,7 @@ const fs = require('fs-extra')
 const getContentFromPage = require('./getContentFromPage')
 const writeToFile = require('./writeToFile')
 const extractFirstSyntaxHightlight = require('./extractFirstSyntaxHightlight')
+const addToIndex = require('./linkIndex').addToIndex
 
 function validateCategory (content) {
   if (!content.includes('==Syntax==')) return false
@@ -66,6 +67,7 @@ async function writeCategoryToFile (category) {
       await writeToFile('errors', page.title, content)
       errors += 1
     } else {
+      addToIndex(category, page.title)
       let fileContents = generateCategoryMarkdown(page.title, extractDescription(content), extractFirstSyntaxHightlight(content))
       await writeToFile('./temp/' + category, page.title, fileContents)
       success += 1
@@ -85,8 +87,8 @@ async function getPagesInCategory (category) {
 }
 
 async function createCategoryPages () {
-  writeCategoryToFile('API_Server')
-  writeCategoryToFile('API_Client')
+  await writeCategoryToFile('API_Server')
+  await writeCategoryToFile('API_Client')
 }
 
 module.exports = createCategoryPages

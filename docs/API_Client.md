@@ -5,14 +5,14 @@ Adds a sub menu into an already existing menu, this function can be overloaded.
 UIMenu API.addSubMenu(UIMenu menu, string text);
 ```
 ## AddTextElement
-Adds a text element on the screen. Essentially is the same as [[DrawText]], but you don't need to draw it every frame yourself.
+Adds a text element on the screen. Essentially is the same as [DrawText](API_Client.md?id=drawtext), but you don't need to draw it every frame yourself.
 
 ```javascript
 API.addTextElement(string caption, double x, double y, double scale, int r, int g, int b, int a, int font, int alignment);
 ```
 ## After
 Executes given function after given amount of time in milliseconds.
-'''See also:''' [[every]], [[stop]]
+'''See also:''' [every](API_Client.md?id=every), [stop](API_Client.md?id=stop)
 
 ```javascript
 API.after(uint time, string functionName, Object[] arguments);
@@ -24,14 +24,14 @@ Client-side Function Description
 API.angleBetween(Vector3 from, Vector3 to);
 ```
 ## ApplyPlayerBlood
-'''See also:''' [[ClearPlayerBloodDamage]]
+'''See also:''' [ClearPlayerBloodDamage](API_Client.md?id=clearplayerblooddamage)
 Add blood to the player at the specified bone
 
 ```javascript
 API.applyPlayerBlood(LocalHandle player, int boneIndex, float xRot, float yRot, float zRot, string woundType);
 ```
 ## ApplyPlayerDamagePack
-'''See also:''' [[ResetPlayerVisualDamage]]
+'''See also:''' [ResetPlayerVisualDamage](API_Client.md?id=resetplayervisualdamage)
 Adds a collection of violations to the player.
 
 ```javascript
@@ -57,7 +57,7 @@ API.attachEntity(LocalHandle ent1, LocalHandle ent2, string bone, Vector3 positi
 ```
 ## BreakVehicleTyre
 Breaks the tyre of a vehicle.
-This Function are Renamed to [[BreakVehicleDoor]] in next Update.
+This Function are Renamed to [BreakVehicleDoor]() in next Update.
 
 ```javascript
 API.breakVehicleTyre(LocalHandle vehicle, int door, bool breakTyre);
@@ -93,21 +93,21 @@ API.callNative(string hash, Object[] args);
 ```
 ## CancelPedRagdoll
 Cancels the current ragdoll action of the local player.
-'''See also:''' [[GetPedCanRagdoll]], [[SetPedCanRagdoll]], [[SetPedToRagdoll]], [[isPlayerRagdoll]]
+'''See also:''' [GetPedCanRagdoll](API_Client.md?id=getpedcanragdoll), [SetPedCanRagdoll](API_Client.md?id=setpedcanragdoll), [SetPedToRagdoll](API_Client.md?id=setpedtoragdoll), [isPlayerRagdoll](API_Client.md?id=isplayerragdoll)
 
 ```javascript
 API.cancelPedRagdoll();
 ```
 ## ClearCloudHat
 Clears the cloud cover.
-'''See also:''' [[SetCloudHatTransition]], [[SetCloudHatOpacity]], [[GetCloudHatOpacity]]
+'''See also:''' [SetCloudHatTransition](API_Client.md?id=setcloudhattransition), [SetCloudHatOpacity](API_Client.md?id=setcloudhatopacity), [GetCloudHatOpacity](API_Client.md?id=getcloudhatopacity)
 
 ```javascript
 API.clearCloudHat();
 ```
 ## ClearPlayerBloodDamage
 Removes the visual blood on the player
-'''See also:''' [[ApplyPlayerBlood]]
+'''See also:''' [ApplyPlayerBlood](API_Client.md?id=applyplayerblood)
 
 ```javascript
 API.clearPlayerBloodDamage(LocalHandle player);
@@ -192,14 +192,14 @@ API.createMenu(string title, string subtitle, double x, double y, int anchor, bo
 ```
 ## CreateMenuItem
 This method creates a new menu item in a client-side menu.
-To create menus, see [[createMenu]].
-For an example on how to create a menu item, and trigger an event when clicking a menu item, see [[UIMenuItem]].
+To create menus, see [createMenu](API_Client.md?id=createmenu).
+For an example on how to create a menu item, and trigger an event when clicking a menu item, see [UIMenuItem]().
 
 ```javascript
 API.createMenuItem(string label, string description);
 ```
 ## CreateOwnedExplosion
-Creates an explosion with the given parameters. The difference between [[createOwnedExplosion]] and [[createExplosion]] is owned explosions do not damage the owner, however any fire/flames associated to the explosion will.
+Creates an explosion with the given parameters. The difference between [createOwnedExplosion](API_Client.md?id=createownedexplosion) and [createExplosion](API_Client.md?id=createexplosion) is owned explosions do not damage the owner, however any fire/flames associated to the explosion will.
 
 ```csharp
 API.createOwnedExplosion(Client owner, int explosionType, Vector3 position, float damageScale, int dimension = 0);
@@ -235,7 +235,7 @@ Deletes a BarTimerBar or TextTimerBar.
 API.deleteTimerBar(BarTimerBar timerbar);
 ```
 ## DestroyCefBrowser
-Destroys a CefBrowser created with the function [[createCefBrowser]]
+Destroys a CefBrowser created with the function [createCefBrowser](API_Client.md?id=createcefbrowser)
 
 ```javascript
 API.destroyCefBrowser(Browser browser);
@@ -247,7 +247,7 @@ Client-side Function Description
 API.detachCamera(GlobalCamera cam);
 ```
 ## DisableAllControlsThisFrame
-This function will disable all the game controls for instance "TAB" displaying weapon inventory. It only disables them for one frame so use this on [[OnUpdate]]. For more game controls, visit this [[Game Controls]].
+This function will disable all the game controls for instance "TAB" displaying weapon inventory. It only disables them for one frame so use this on [OnUpdate](). For more game controls, visit this [[Game Controls]].
 
 ```javascript
 API.disableAllControlsThisFrame();
@@ -259,7 +259,7 @@ Disables/Enables the alternative Main Menu Key (P key).
 void API.disableAlternativeMainMenuKey(bool enable);
 ```
 ## DisableControlThisFrame
-Disables the the specified control for a single [[onUpdate]] run.
+Disables the the specified control for a single [onUpdate]() run.
 
 ```javascript
 API.disableControlThisFrame(int control);
@@ -272,7 +272,7 @@ API.disableFingerPointing(bool disabled);
 ```
 ## DisableInteriorProp
 Disables a prop in the specified interior
-'''See also:''' [[EnableInteriorProp]], [[IsInteriorPropEnabled]]
+'''See also:''' [EnableInteriorProp](API_Client.md?id=enableinteriorprop), [IsInteriorPropEnabled](API_Client.md?id=isinteriorpropenabled)
 
 ```javascript
 API.disableInteriorProp(int interiorId, string propName);
@@ -327,7 +327,7 @@ API.drawLine(Vector3 start, Vector3 end, int a, int r, int g, int b);
 ```
 ## DrawMenu
 Client-side Function Description
-{{Important|API.drawMenu() will be removed in the next update. See [[Deprecated]] for more information. }}
+{{Important|API.drawMenu() will be removed in the next update. See [Deprecated]() for more information. }}
 
 ```javascript
 API.drawMenu(UIMenu menu);
@@ -346,7 +346,7 @@ API.drawText(string caption, double xPos, double yPos, double scale, int r, int 
 ```
 ## DxDrawTexture
 This method draws a custom graphic to the screen using DirectX.
-Needs to be called inside the client [[onUpdate]] event.
+Needs to be called inside the client [onUpdate]() event.
 
 ```javascript
 API.dxDrawTexture(string path, Point pos, Size size, double rotation = 0.0);
@@ -358,33 +358,33 @@ Client-side Function Description
 API.enableControlThisFrame(int control);
 ```
 ## EnableInteriorProp
-'''See also:''' [[DisableInteriorProp]], [[IsInteriorPropEnabled]]
+'''See also:''' [DisableInteriorProp](API_Client.md?id=disableinteriorprop), [IsInteriorPropEnabled](API_Client.md?id=isinteriorpropenabled)
 
 ```javascript
 API.enableInteriorProp(int interiorId, string propName);
 ```
 ## Every
 Executes given function after given amount of time in milliseconds and repeats it until stopped.
-'''See also:''' [[after]], [[stop]]
+'''See also:''' [after](API_Client.md?id=after), [stop](API_Client.md?id=stop)
 
 ```javascript
 API.every(uint time, string functionName, Object[] arguments);
 ```
 ## F
-This function is used to declare explicit floating-point arguments inside API.[[callNative]] and API.[[returnNative]] parameters.
+This function is used to declare explicit floating-point arguments inside API.[callNative](API_Client.md?id=callnative) and API.[returnNative](API_Client.md?id=returnnative) parameters.
 
 ```javascript
 API.f(double value);
 ```
 ## FadeScreenIn
-'''See also:''' [[FadeScreenOut]], [[IsScreenFadedIn]], [[IsScreenFadedOut]], [[IsScreenFadingIn]], [[IsScreenFadingOut]]
+'''See also:''' [FadeScreenOut](API_Client.md?id=fadescreenout), [IsScreenFadedIn](API_Client.md?id=isscreenfadedin), [IsScreenFadedOut](API_Client.md?id=isscreenfadedout), [IsScreenFadingIn](API_Client.md?id=isscreenfadingin), [IsScreenFadingOut](API_Client.md?id=isscreenfadingout)
 Displays the screen in the specified time (time in milliseconds).
 
 ```javascript
 API.fadeScreenIn(int time);
 ```
 ## FadeScreenOut
-'''See also:''' [[FadeScreenIn]], [[IsScreenFadedIn]], [[IsScreenFadedOut]], [[IsScreenFadingIn]], [[IsScreenFadingOut]]
+'''See also:''' [FadeScreenIn](API_Client.md?id=fadescreenin), [IsScreenFadedIn](API_Client.md?id=isscreenfadedin), [IsScreenFadedOut](API_Client.md?id=isscreenfadedout), [IsScreenFadingIn](API_Client.md?id=isscreenfadingin), [IsScreenFadingOut](API_Client.md?id=isscreenfadingout)
 Hides the screen in the specified time (time in milliseconds).
 
 ```javascript
@@ -440,20 +440,20 @@ bool API.getAlternativeMainMenuKeyDisabled();
 ```
 ## GetAlternativeVersionLabelPositionActive
 Gets the current alternative GT-MP.net version label position status.
-'''See also:''' [[toggleAlternativeVersionLabelPosition]]
+'''See also:''' [toggleAlternativeVersionLabelPosition](API_Client.md?id=togglealternativeversionlabelposition)
 
 ```javascript
 API.getAlternativeVersionLabelPositionActive();
 ```
 ## GetAnimCurrentTime
-'''See also:''' [[GetAnimTotalTime]]
+'''See also:''' [GetAnimTotalTime](API_Client.md?id=getanimtotaltime)
 Returns the current animation time of the specified Ped.
 
 ```javascript
 float API.getAnimCurrentTime(LocalHandle handle, string animDict, string animName);
 ```
 ## GetAnimTotalTime
-'''See also:''' [[GetAnimCurrentTime]]
+'''See also:''' [GetAnimCurrentTime](API_Client.md?id=getanimcurrenttime)
 '''Variation 1:''' Returns the total animation time of the specified Ped.
 '''Variation 2:''' Returns the total time of the specified animation.
 
@@ -535,7 +535,7 @@ API.getChatVisible();
 ```
 ## GetCloudHatOpacity
 Returns the cloud cover opacity.
-'''See also:''' [[ClearCloudHat]], [[SetCloudHatOpacity]], [[SetCloudHatTransition]]
+'''See also:''' [ClearCloudHat](API_Client.md?id=clearcloudhat), [SetCloudHatOpacity](API_Client.md?id=setcloudhatopacity), [SetCloudHatTransition](API_Client.md?id=setcloudhattransition)
 
 ```javascript
 float API.getCloudHatOpacity();
@@ -672,7 +672,7 @@ Gets the amount of milliseconds since the game started.
 API.getGameTime();
 ```
 ## GetGameplayCamDir
-Gets the direction of where the current player is looking as a [[Vector3]].
+Gets the direction of where the current player is looking as a [Vector3]().
 
 ```javascript
 API.getGameplayCamDir();
@@ -733,7 +733,7 @@ API.getMaxHealth();
 ```
 ## GetMenuPool
 Client-side Function Description
-{{Important|API.getMenuPool() will be removed in the next update. See [[Deprecated]] for more information. }}
+{{Important|API.getMenuPool() will be removed in the next update. See [Deprecated]() for more information. }}
 
 ```javascript
 API.getMenuPool();
@@ -813,14 +813,14 @@ Client-side Function Description
 API.getOffsetInWorldCoords(LocalHandle entity, Vector3 offset);
 ```
 ## GetPedCanRagdoll
-'''See also:''' [[SetPedCanRagdoll]], [[SetPedToRagdoll]], [[CancelPedRagdoll]], [[isPlayerRagdoll]]
+'''See also:''' [SetPedCanRagdoll](API_Client.md?id=setpedcanragdoll), [SetPedToRagdoll](API_Client.md?id=setpedtoragdoll), [CancelPedRagdoll](API_Client.md?id=cancelpedragdoll), [isPlayerRagdoll](API_Client.md?id=isplayerragdoll)
 Returns whether or not the ragdoll of the local player is active.
 
 ```javascript
 bool API.getPedCanRagdoll();
 ```
 ## GetPedHeadShotTextureString
-'''See also:''' [[UnregisterPedHeadShot]], [[RegisterPedHeadShot]], [[IsPedHeadShotValid]], [[IsPedHeadShotReady]]
+'''See also:''' [UnregisterPedHeadShot](API_Client.md?id=unregisterpedheadshot), [RegisterPedHeadShot](API_Client.md?id=registerpedheadshot), [IsPedHeadShotValid](API_Client.md?id=ispedheadshotvalid), [IsPedHeadShotReady](API_Client.md?id=ispedheadshotready)
 Returns the specified Ped Headshot as a string.
 
 ```javascript
@@ -876,7 +876,7 @@ API.getScreenResolutionMaintainRatio();
 ```
 ## GetShowWastedScreenOnDeath
 Gets if wasted-screen should be shown if the local player dies.
-'''See also:''' [[setShowWastedScreenOnDeath]]
+'''See also:''' [setShowWastedScreenOnDeath](API_Client.md?id=setshowwastedscreenondeath)
 
 ```javascript
 API.getShowWastedScreenOnDeath();
@@ -1091,14 +1091,14 @@ Checks if the specified vehicle has any mods available of the given mod type.
 API.hasVehicleMod(LocalHandle vehicle, int modType);
 ```
 ## HideHudComponentThisFrame
-'''See also:''' [[IsHudComponentActive]], [[ShowHudComponentThisFrame]]
+'''See also:''' [IsHudComponentActive](API_Client.md?id=ishudcomponentactive), [ShowHudComponentThisFrame](API_Client.md?id=showhudcomponentthisframe)
 Hides the specified hud component for this Frame.
 
 ```javascript
 API.hideHudComponentThisFrame(int componentId);
 ```
 ## HideLoadingPrompt
-'''See also:''' [[ShowLoadingPrompt]], [[IsLoadingPromptActive]]
+'''See also:''' [ShowLoadingPrompt](API_Client.md?id=showloadingprompt), [IsLoadingPromptActive](API_Client.md?id=isloadingpromptactive)
 Hides the Loading prompt.
 
 ```javascript
@@ -1123,7 +1123,7 @@ Client-side Function Description
 API.isAimDataForced();
 ```
 ## IsAlarmPlaying
-'''See also:''' [[StopAllAlarms]], [[StartAlarm]], [[StopAlarm]]
+'''See also:''' [StopAllAlarms](API_Client.md?id=stopallalarms), [StartAlarm](API_Client.md?id=startalarm), [StopAlarm](API_Client.md?id=stopalarm)
 Checks if the specified Alarm playack is running.
 
 ```javascript
@@ -1184,7 +1184,7 @@ Client-side Function Description
 API.isChatOpen();
 ```
 ## IsControlJustPressed
-Checks if the specified game control has just been pressed. Has to be checked in [[OnUpdate]]. This function will only recognize a game contrl pressed once. If you wish to get repeated responses of which key is being held, use [[IsControlPressed]].
+Checks if the specified game control has just been pressed. Has to be checked in [OnUpdate](). This function will only recognize a game contrl pressed once. If you wish to get repeated responses of which key is being held, use [IsControlPressed](API_Client.md?id=iscontrolpressed).
 
 ```javascript
 API.isControlJustPressed(int control);
@@ -1196,13 +1196,13 @@ Client-side Function Description
 API.isControlJustReleased(int control);
 ```
 ## IsControlPressed
-Similar to [[IsControlJustPressed]], it's used on [[OnUpdate]] and will return if the game control is clicked. This will can be used to also recognize whether or not a game control is being held by a player. For full game control list check out [[Game Controls]].
+Similar to [IsControlJustPressed](API_Client.md?id=iscontroljustpressed), it's used on [OnUpdate]() and will return if the game control is clicked. This will can be used to also recognize whether or not a game control is being held by a player. For full game control list check out [[Game Controls]].
 
 ```javascript
 API.isControlPressed(int control);
 ```
 ## IsCursorShown
-Returns whether the cursor is currently shown or not. Also see the [[showCursor]] function.
+Returns whether the cursor is currently shown or not. Also see the [showCursor](API_Client.md?id=showcursor) function.
 
 ```javascript
 API.isCursorShown();
@@ -1232,28 +1232,28 @@ Client-side Function Description
 API.isEntityPositionFrozen(LocalHandle entity);
 ```
 ## IsEntityTouchingEntity
-'''See also:''' [[IsEntityTouchingModel]]
+'''See also:''' [IsEntityTouchingModel](API_Client.md?id=isentitytouchingmodel)
 Returns whether Entity is touching a specified Entity.
 
 ```javascript
 bool API.isEntityTouchingEntity(LocalHandle entity, LocalHandle targetEntity);
 ```
 ## IsEntityTouchingModel
-'''See also:''' [[IsEntityTouchingEntity]]
+'''See also:''' [IsEntityTouchingEntity](API_Client.md?id=isentitytouchingentity)
 Returns whether Entity is touching a specified Model.
 
 ```javascript
 bool API.isEntityTouchingModel(LocalHandle entity, int modelHash);
 ```
 ## IsEntityUpright
-'''See also:''' [[IsEntityUpsidedown]]
+'''See also:''' [IsEntityUpsidedown](API_Client.md?id=isentityupsidedown)
 Returns whether Entity is Upright.
 
 ```javascript
 bool API.isEntityUpright(LocalHandle entity, float angle);
 ```
 ## IsEntityUpsidedown
-'''See also:''' [[IsEntityUpright]]
+'''See also:''' [IsEntityUpright](API_Client.md?id=isentityupright)
 Returns whether Entity is Upside Down.
 
 ```javascript
@@ -1278,14 +1278,14 @@ Gets if the onfoot firstperson-camera has been disabled.
 API.isFirstPersonCamDisabled();
 ```
 ## IsGameplayCameraShaking
-'''See also:''' [[SetGameplayCameraShake]], [[StopGameplayCameraShake]]
+'''See also:''' [SetGameplayCameraShake](API_Client.md?id=setgameplaycamerashake), [StopGameplayCameraShake](API_Client.md?id=stopgameplaycamerashake)
 Returns whether the camera of the player is shaking.
 
 ```javascript
 bool API.isGameplayCameraShaking();
 ```
 ## IsHudComponentActive
-'''See also:''' [[ShowHudComponentThisFrame]], [[HideHudComponentThisFrame]]
+'''See also:''' [ShowHudComponentThisFrame](API_Client.md?id=showhudcomponentthisframe), [HideHudComponentThisFrame](API_Client.md?id=hidehudcomponentthisframe)
 Returns whether the specified hud component is active or not.
 
 ```javascript
@@ -1304,13 +1304,13 @@ Client-side Function Description
 API.isInRangeOf(Vector3 entity, Vector3 destination, double range);
 ```
 ## IsInteriorPropEnabled
-'''See also:''' [[EnableInteriorProp]], [[DisableInteriorProp]]
+'''See also:''' [EnableInteriorProp](API_Client.md?id=enableinteriorprop), [DisableInteriorProp](API_Client.md?id=disableinteriorprop)
 
 ```javascript
 API.isInteriorPropEnabled(int interiorId, string propName);
 ```
 ## IsLoadingPromptActive
-'''See also:''' [[HideLoadingPrompt]], [[ShowLoadingPrompt]]
+'''See also:''' [HideLoadingPrompt](API_Client.md?id=hideloadingprompt), [ShowLoadingPrompt](API_Client.md?id=showloadingprompt)
 Returns whether a Loading Prompt is active or not.
 
 ```javascript
@@ -1347,14 +1347,14 @@ Client-side Function Description
 API.isPed(LocalHandle ent);
 ```
 ## IsPedHeadShotReady
-'''See also:''' [[UnregisterPedHeadShot]], [[GetPedHeadShotTextureString]], [[IsPedHeadShotValid]], [[RegisterPedHeadShot]]
+'''See also:''' [UnregisterPedHeadShot](API_Client.md?id=unregisterpedheadshot), [GetPedHeadShotTextureString](API_Client.md?id=getpedheadshottexturestring), [IsPedHeadShotValid](API_Client.md?id=ispedheadshotvalid), [RegisterPedHeadShot](API_Client.md?id=registerpedheadshot)
 Checks if the Headshot is ready.
 
 ```javascript
 bool API.isPedHeadShotReady(int handle);
 ```
 ## IsPedHeadShotValid
-'''See also:''' [[UnregisterPedHeadShot]], [[GetPedHeadShotTextureString]], [[RegisterPedHeadShot]], [[IsPedHeadShotReady]]
+'''See also:''' [UnregisterPedHeadShot](API_Client.md?id=unregisterpedheadshot), [GetPedHeadShotTextureString](API_Client.md?id=getpedheadshottexturestring), [RegisterPedHeadShot](API_Client.md?id=registerpedheadshot), [IsPedHeadShotReady](API_Client.md?id=ispedheadshotready)
 Checks if the Headshot is valid.
 
 ```javascript
@@ -1374,7 +1374,7 @@ bool API.isPlayerClimbing(LocalHandle player);
 ```
 ## IsPlayerClothesVariationValid
 Checks if the given clothes-variation is valid.
-''This is an alias for [[isPlayerComponentVariationValid]]''.
+''This is an alias for [isPlayerComponentVariationValid](API_Client.md?id=isplayercomponentvariationvalid)''.
 
 ```javascript
 API.isPlayerClothesVariationValid(LocalHandle player, int componentId, int drawableId, int textureId);
@@ -1416,7 +1416,7 @@ Checks if specified lipstickcolor is valid.
 API.isPlayerLipstickColorValid(int colorId);
 ```
 ## IsPlayerRagdoll
-'''See also:''' [[GetPedCanRagdoll]], [[SetPedCanRagdoll]], [[SetPedToRagdoll]], [[CancelPedRagdoll]]
+'''See also:''' [GetPedCanRagdoll](API_Client.md?id=getpedcanragdoll), [SetPedCanRagdoll](API_Client.md?id=setpedcanragdoll), [SetPedToRagdoll](API_Client.md?id=setpedtoragdoll), [CancelPedRagdoll](API_Client.md?id=cancelpedragdoll)
 Returns whether the player is currently in a Ragdoll action.
 
 ```javascript
@@ -1447,28 +1447,28 @@ Client-side Function Description
 API.isProp(LocalHandle ent);
 ```
 ## IsScreenFadedIn
-'''See also:''' [[FadeScreenIn]], [[FadeScreenOut]], [[IsScreenFadedOut]], [[IsScreenFadingIn]], [[IsScreenFadingOut]]
+'''See also:''' [FadeScreenIn](API_Client.md?id=fadescreenin), [FadeScreenOut](API_Client.md?id=fadescreenout), [IsScreenFadedOut](API_Client.md?id=isscreenfadedout), [IsScreenFadingIn](API_Client.md?id=isscreenfadingin), [IsScreenFadingOut](API_Client.md?id=isscreenfadingout)
 Indicates whether the screen is fully displayed.
 
 ```javascript
 bool API.isScreenFadedIn();
 ```
 ## IsScreenFadedOut
-'''See also:''' [[FadeScreenIn]], [[FadeScreenOut]], [[IsScreenFadedIn]], [[IsScreenFadingIn]], [[IsScreenFadingOut]]
+'''See also:''' [FadeScreenIn](API_Client.md?id=fadescreenin), [FadeScreenOut](API_Client.md?id=fadescreenout), [IsScreenFadedIn](API_Client.md?id=isscreenfadedin), [IsScreenFadingIn](API_Client.md?id=isscreenfadingin), [IsScreenFadingOut](API_Client.md?id=isscreenfadingout)
 Returns whether the screen is completely hidden.
 
 ```javascript
 bool API.isScreenFadedOut();
 ```
 ## IsScreenFadingIn
-'''See also:''' [[FadeScreenIn]], [[FadeScreenOut]], [[IsScreenFadedIn]], [[IsScreenFadedOut]], [[IsScreenFadingOut]]
+'''See also:''' [FadeScreenIn](API_Client.md?id=fadescreenin), [FadeScreenOut](API_Client.md?id=fadescreenout), [IsScreenFadedIn](API_Client.md?id=isscreenfadedin), [IsScreenFadedOut](API_Client.md?id=isscreenfadedout), [IsScreenFadingOut](API_Client.md?id=isscreenfadingout)
 Returns whether the screen is currently fadeing in or not.
 
 ```javascript
 bool API.isScreenFadingIn();
 ```
 ## IsScreenFadingOut
-'''See also:''' [[FadeScreenIn]], [[FadeScreenOut]], [[IsScreenFadedIn]], [[IsScreenFadedOut]], [[IsScreenFadingIn]]
+'''See also:''' [FadeScreenIn](API_Client.md?id=fadescreenin), [FadeScreenOut](API_Client.md?id=fadescreenout), [IsScreenFadedIn](API_Client.md?id=isscreenfadedin), [IsScreenFadedOut](API_Client.md?id=isscreenfadedout), [IsScreenFadingIn](API_Client.md?id=isscreenfadingin)
 Returns whether the screen is currently fadeing out or not.
 
 ```javascript
@@ -1643,7 +1643,7 @@ Change the menu's width. The width is calculated as DefaultWidth + WidthOffset, 
 myMenu.SetMenuWidthOffset(int widthOffset);
 ```
 ## OnCustomDataReceived
-Called when the client receives custom data transfered via [[downloadData]] by the server.
+Called when the client receives custom data transfered via [downloadData](API_Server.md?id=downloaddata) by the server.
 
 ```javascript
 API.onCustomDataReceived.connect(function callback);
@@ -1687,8 +1687,8 @@ API.onHudVisibilityChange.connect((visible) => {
 ## OnKeyDown
 [[Category:Client Side Javascript]]
 This event triggers the first time a certain key is pressed, '''and if held down, it repeats after that.'''
-See [[onKeyUp]] for more info on the raised event, and the <code>Keys.</code> list.
-If you want to use this to catch game controls, consider using [[isControlJustPressed]] instead, which matches up with bindings on both keyboard and gamepad.
+See [onKeyUp](API_Client.md?id=onkeyup) for more info on the raised event, and the <code>Keys.</code> list.
+If you want to use this to catch game controls, consider using [isControlJustPressed](API_Client.md?id=iscontroljustpressed) instead, which matches up with bindings on both keyboard and gamepad.
 
 ```javascript
 API.onKeyDown.connect(function callback);
@@ -1773,7 +1773,7 @@ This removes the default chat and lets you control everything about it with meth
 API.registerChatOverride();
 ```
 ## RegisterPedHeadShot
-'''See also:''' [[UnregisterPedHeadShot]], [[GetPedHeadShotTextureString]], [[IsPedHeadShotValid]], [[IsPedHeadShotReady]]
+'''See also:''' [UnregisterPedHeadShot](API_Client.md?id=unregisterpedheadshot), [GetPedHeadShotTextureString](API_Client.md?id=getpedheadshottexturestring), [IsPedHeadShotValid](API_Client.md?id=ispedheadshotvalid), [IsPedHeadShotReady](API_Client.md?id=ispedheadshotready)
 Registers a Headshot for a Ped (More informations [http://gtaforums.com/topic/885580-ped-headshotmugshot-txd/?hl=headshot here])
 
 ```javascript
@@ -1798,7 +1798,7 @@ Client-side Function Description
 API.renderScaleform(Scaleform sc, double x, double y, double w, double h);
 ```
 ## RequestControlOfPlayer
-'''See also:''' [[StopControlOfPlayer]]
+'''See also:''' [StopControlOfPlayer](API_Client.md?id=stopcontrolofplayer)
 Stops updating / syncing that players actions.
 
 ```javascript
@@ -1811,14 +1811,14 @@ Client-side Function Description
 API.requestScaleform(string scaleformName);
 ```
 ## ResetPlayerMovementClipset
-'''See also:''' [[SetPlayerMovementClipset]]
+'''See also:''' [SetPlayerMovementClipset](API_Client.md?id=setplayermovementclipset)
 Resets the Movement Clipset for the specified player.
 
 ```javascript
 API.resetPlayerMovementClipset(LocalHandle player);
 ```
 ## ResetPlayerVisualDamage
-'''See also:''' [[ApplyPlayerDamagePack]]
+'''See also:''' [ApplyPlayerDamagePack](API_Client.md?id=applyplayerdamagepack)
 Reset the current visual player damage.
 
 ```javascript
@@ -1948,7 +1948,7 @@ Sets the camera rotation.
 API.setCameraRotation(GlobalCamera cam, Vector3 rotation);
 ```
 ## SetCameraShake
-Sets the camera to shaking. Use '''[[StopCameraShake]]''' to stop the shaking.
+Sets the camera to shaking. Use '''[StopCameraShake](API_Client.md?id=stopcamerashake)''' to stop the shaking.
 
 ```javascript
 API.setCameraShake(GlobalCamera cam, string shakeType, float amplitute);
@@ -2005,14 +2005,14 @@ Turns the chat on or off.
 API.setChatVisible(bool display);
 ```
 ## SetCloudHatOpacity
-'''See also:''' [[ClearCloudHat]], [[SetCloudHatTransition]], [[GetCloudHatOpacity]]
+'''See also:''' [ClearCloudHat](API_Client.md?id=clearcloudhat), [SetCloudHatTransition](API_Client.md?id=setcloudhattransition), [GetCloudHatOpacity](API_Client.md?id=getcloudhatopacity)
 Sets the cloud cover opacity.
 
 ```javascript
 API.setCloudHatOpacity(float opacity);
 ```
 ## SetCloudHatTransition
-'''See also:''' [[ClearCloudHat]], [[SetCloudHatOpacity]], [[GetCloudHatOpacity]]
+'''See also:''' [ClearCloudHat](API_Client.md?id=clearcloudhat), [SetCloudHatOpacity](API_Client.md?id=setcloudhatopacity), [GetCloudHatOpacity](API_Client.md?id=getcloudhatopacity)
 Change the cloud cover to the specified type in the specified time.
 '''Type list'''
      Cloudy 01
@@ -2064,7 +2064,7 @@ Client-side Function Description
 API.setGameplayCameraActive();
 ```
 ## SetGameplayCameraShake
-'''See also:''' [[StopGameplayCameraShake]], [[IsGameplayCameraShaking]]
+'''See also:''' [StopGameplayCameraShake](API_Client.md?id=stopgameplaycamerashake), [IsGameplayCameraShaking](API_Client.md?id=isgameplaycamerashaking)
 Sets the camera shake type and amplitude for the local player.
 '''Camera Shake Type List'''
   HAND_SHAKE
@@ -2150,14 +2150,14 @@ Sets the next weather for later transitioning.
 void API.setNextWeather(int weather);
 ```
 ## SetPedCanRagdoll
-'''See also:''' [[GetPedCanRagdoll]], [[SetPedToRagdoll]], [[CancelPedRagdoll]], [[isPlayerRagdoll]]
+'''See also:''' [GetPedCanRagdoll](API_Client.md?id=getpedcanragdoll), [SetPedToRagdoll](API_Client.md?id=setpedtoragdoll), [CancelPedRagdoll](API_Client.md?id=cancelpedragdoll), [isPlayerRagdoll](API_Client.md?id=isplayerragdoll)
 Enables or disables Ragdoll for the local player.
 
 ```javascript
 API.setPedCanRagdoll(bool canRagdoll);
 ```
 ## SetPedToRagdoll
-'''See also:''' [[GetPedCanRagdoll]], [[SetPedCanRagdoll]], [[CancelPedRagdoll]], [[isPlayerRagdoll]]
+'''See also:''' [GetPedCanRagdoll](API_Client.md?id=getpedcanragdoll), [SetPedCanRagdoll](API_Client.md?id=setpedcanragdoll), [CancelPedRagdoll](API_Client.md?id=cancelpedragdoll), [isPlayerRagdoll](API_Client.md?id=isplayerragdoll)
 Sets the Ragdoll type for the local player for a specific time period. (duration in milliseconds)
 '''ragdollTypes'''
 *''0 : Normal ragdoll''
@@ -2182,7 +2182,7 @@ API.setPlayerChestHair(LocalHandle player, int id, int colorId, float opacity);
 ```
 ## SetPlayerComponentVariation
 Sets the component-variation of a specified player.
-''This is an alias for [[setPlayerClothes]]''.
+''This is an alias for [setPlayerClothes]()''.
 
 ```javascript
 API.setPlayerComponentVariation(LocalHandle player, int componentId, int drawableId, int textureId);
@@ -2267,7 +2267,7 @@ Sets the drunkenness status for the specified player.
 API.setPlayerIsDrunk(LocalHandle player, bool isDrunk);
 ```
 ## SetPlayerMovementClipset
-'''See also:''' [[ResetPlayerMovementClipset]]
+'''See also:''' [ResetPlayerMovementClipset](API_Client.md?id=resetplayermovementclipset)
 Sets the Movement Clipset for the specified player.
 
 ```javascript
@@ -2287,7 +2287,7 @@ API.setRadarZoom(int zoom);
 ```
 ## SetShowWastedScreenOnDeath
 Sets if the wasted-screen should be shown on player death.
-'''See also:''' [[getShowWastedScreenOnDeath]]
+'''See also:''' [getShowWastedScreenOnDeath](API_Client.md?id=getshowwastedscreenondeath)
 
 ```javascript
 API.setShowWastedScreenOnDeath(bool toggle);
@@ -2365,14 +2365,14 @@ Shows a custom shard
 API.showCustomShard(string funcName, params object[] parameters);
 ```
 ## ShowHudComponentThisFrame
-'''See also:''' [[IsHudComponentActive]], [[HideHudComponentThisFrame]]
+'''See also:''' [IsHudComponentActive](API_Client.md?id=ishudcomponentactive), [HideHudComponentThisFrame](API_Client.md?id=hidehudcomponentthisframe)
 Shows the specified hud component for this Frame.
 
 ```javascript
 API.showHudComponentThisFrame(int componentId);
 ```
 ## ShowLoadingPrompt
-'''See also:''' [[HideLoadingPrompt]], [[IsLoadingPromptActive]]
+'''See also:''' [HideLoadingPrompt](API_Client.md?id=hideloadingprompt), [IsLoadingPromptActive](API_Client.md?id=isloadingpromptactive)
 Shows a Loading Prompt with the defined Text and Spinner type.
 
 ```javascript
@@ -2420,7 +2420,7 @@ Shows a weapon purchased message
 API.showWeaponPurchasedMessage(string bigMessage, string weaponName, int weapon, int time = 5000);
 ```
 ## StartAlarm
-'''See also:''' [[StopAllAlarms]], [[IsAlarmPlaying]], [[StopAlarm]]
+'''See also:''' [StopAllAlarms](API_Client.md?id=stopallalarms), [IsAlarmPlaying](API_Client.md?id=isalarmplaying), [StopAlarm](API_Client.md?id=stopalarm)
 Starts the specified Alarm.
 '''Alarm List'''
  AGENCY_HEIST_FIB_TOWER_ALARMS
@@ -2441,7 +2441,7 @@ Starts the specified Alarm.
 API.startAlarm(string alarmName);
 ```
 ## StartAudio
-Plays a specific audio file. Use '''[[StopAudio]]''' to stop playing a specific audio file
+Plays a specific audio file. Use '''[StopAudio](API_Client.md?id=stopaudio)''' to stop playing a specific audio file
 
 ```javascript
 API.startAudio(string path, bool looped, void play());
@@ -2460,13 +2460,13 @@ API.startMusic(string path, bool looped);
 ```
 ## Stop
 Stops or aborts a given timer.
-'''See also:''' [[after]], [[every]]
+'''See also:''' [after](API_Client.md?id=after), [every](API_Client.md?id=every)
 
 ```javascript
 API.stop(uint id);
 ```
 ## StopAlarm
-'''See also:''' [[StopAllAlarms]], [[StartAlarm]], [[IsAlarmPlaying]]
+'''See also:''' [StopAllAlarms](API_Client.md?id=stopallalarms), [StartAlarm](API_Client.md?id=startalarm), [IsAlarmPlaying](API_Client.md?id=isalarmplaying)
 Stops the specified Alarm.
 '''Alarm List'''
  AGENCY_HEIST_FIB_TOWER_ALARMS
@@ -2487,7 +2487,7 @@ Stops the specified Alarm.
 API.stopAlarm(string alarmName);
 ```
 ## StopAllAlarms
-'''See also:''' [[IsAlarmPlaying]], [[StartAlarm]], [[StopAlarm]]
+'''See also:''' [IsAlarmPlaying](API_Client.md?id=isalarmplaying), [StartAlarm](API_Client.md?id=startalarm), [StopAlarm](API_Client.md?id=stopalarm)
 Stops all running Alarms.
 
 ```javascript
@@ -2499,7 +2499,7 @@ API.stopAllAlarms();
 API.stopAllScreenEffects();
 ```
 ## StopAudio
-Stops a specific audio file. To play an audio file, use '''[[StartAudio]]'''.
+Stops a specific audio file. To play an audio file, use '''[StartAudio](API_Client.md?id=startaudio)'''.
 
 ```javascript
 API.stopAudio(void play());
@@ -2511,20 +2511,20 @@ Client-side Function Description
 API.stopCameraPointing(GlobalCamera cam);
 ```
 ## StopCameraShake
-Stops the camera shaking. Use '''[[SetCameraShake]]''' to start the shaking.
+Stops the camera shaking. Use '''[SetCameraShake](API_Client.md?id=setcamerashake)''' to start the shaking.
 
 ```javascript
 API.stopCameraShake(GlobalCamera cam);
 ```
 ## StopControlOfPlayer
-'''See also:''' [[RequestControlOfPlayer]]
+'''See also:''' [RequestControlOfPlayer](API_Client.md?id=requestcontrolofplayer)
 Starts updating / syncing that players actions.
 
 ```javascript
 API.stopControlOfPlayer(LocalHandle player);
 ```
 ## StopGameplayCameraShake
-'''See also:''' [[SetGameplayCameraShake]], [[IsGameplayCameraShaking]]
+'''See also:''' [SetGameplayCameraShake](API_Client.md?id=setgameplaycamerashake), [IsGameplayCameraShaking](API_Client.md?id=isgameplaycamerashaking)
 Stops the camera shake for the local player.
 
 ```javascript
@@ -2562,7 +2562,7 @@ API.toggleAIPedsSpawning(bool active);
 ```
 ## ToggleAlternativeVersionLabelPosition
 Moves the GT-MP.net version label to the lower right corner.
-'''See also: ''' [[getAlternativeVersionLabelPositionActive]]
+'''See also: ''' [getAlternativeVersionLabelPositionActive](API_Client.md?id=getalternativeversionlabelpositionactive)
 
 ```javascript
 API.toggleAlternativeVersionLabelPosition(bool toggle);
@@ -2586,8 +2586,8 @@ Starts the transition to the specified weather type.
 void API.transitionToWeather(int weather, float duration);
 ```
 ## TriggerServerEvent
-Triggers a server-side event from the client to the server. For the inverse method of this (server to client), see [[triggerClientEvent]].
-This method triggers the server-side [[onClientEventTrigger]] event.
+Triggers a server-side event from the client to the server. For the inverse method of this (server to client), see [triggerClientEvent](API_Server.md?id=triggerclientevent).
+This method triggers the server-side [onClientEventTrigger]() event.
 
 ```javascript
 API.triggerServerEvent(string eventName, Object[] arguments);
@@ -2607,7 +2607,7 @@ This event is triggered when a player changes the displayed option of a list ite
 yourListName.OnListChanged.connect(function(sender, new_index) {...
 ```
 ## UnregisterPedHeadShot
-'''See also:''' [[RegisterPedHeadShot]], [[GetPedHeadShotTextureString]], [[IsPedHeadShotValid]], [[IsPedHeadShotReady]]
+'''See also:''' [RegisterPedHeadShot](API_Client.md?id=registerpedheadshot), [GetPedHeadShotTextureString](API_Client.md?id=getpedheadshottexturestring), [IsPedHeadShotValid](API_Client.md?id=ispedheadshotvalid), [IsPedHeadShotReady](API_Client.md?id=ispedheadshotready)
 Unregisters a Headshot for a Ped
 
 ```javascript
