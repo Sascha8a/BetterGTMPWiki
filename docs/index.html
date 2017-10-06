@@ -32,49 +32,189 @@
   <meta name="browsermode" content="application">
 
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-  <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
+  <link rel="preload" href="//unpkg.com/docsify/lib/themes/vue.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="//unpkg.com/docsify-copy-code/styles.css" as="style" onload="this.rel='stylesheet'">
+
   <link rel="manifest" href="manifest.json">
+
+  <script>
+    /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function (a) { "use strict"; var b = function (b, c, d) { function e(a) { return h.body ? a() : void setTimeout(function () { e(a) }) } function f() { i.addEventListener && i.removeEventListener("load", f), i.media = d || "all" } var g, h = a.document, i = h.createElement("link"); if (c) g = c; else { var j = (h.body || h.getElementsByTagName("head")[0]).childNodes; g = j[j.length - 1] } var k = h.styleSheets; i.rel = "stylesheet", i.href = b, i.media = "only x", e(function () { g.parentNode.insertBefore(i, c ? g : g.nextSibling) }); var l = function (a) { for (var b = i.href, c = k.length; c--;)if (k[c].href === b) return a(); setTimeout(function () { l(a) }) }; return i.addEventListener && i.addEventListener("load", f), i.onloadcssdefined = l, l(f), i }; "undefined" != typeof exports ? exports.loadCSS = b : a.loadCSS = b }("undefined" != typeof global ? global : this);
+    /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function (a) { if (a.loadCSS) { var b = loadCSS.relpreload = {}; if (b.support = function () { try { return a.document.createElement("link").relList.supports("preload") } catch (b) { return !1 } }, b.poly = function () { for (var b = a.document.getElementsByTagName("link"), c = 0; c < b.length; c++) { var d = b[c]; "preload" === d.rel && "style" === d.getAttribute("as") && (a.loadCSS(d.href, d, d.getAttribute("media")), d.rel = null) } }, !b.support()) { b.poly(); var c = a.setInterval(b.poly, 300); a.addEventListener && a.addEventListener("load", function () { b.poly(), a.clearInterval(c) }), a.attachEvent && a.attachEvent("onload", function () { a.clearInterval(c) }) } } }(this);
+  </script>
+
+  <style>
+    .tri,
+    .tri.invert {
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent
+    }
+
+    @keyframes pulse {
+      0%,
+      16.666% {
+        opacity: 1
+      }
+      100% {
+        opacity: 0
+      }
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1
+      }
+      100% {
+        opacity: 0
+      }
+    }
+
+    .loader {
+      animation: fadeOut 1s ease-out 1s forwards;
+      animation-play-state: paused;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #fff;
+      z-index: 99
+    }
+
+    .tri,
+    .triangles {
+      position: absolute
+    }
+
+    .triangles {
+      height: 81px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 90px
+    }
+
+    .tri {
+      animation: pulse 750ms ease-in infinite;
+      border-top: 27px solid #215A6D;
+      border-bottom: 0
+    }
+
+    .tri.invert {
+      border-top: 0;
+      border-bottom: 27px solid #215A6D
+    }
+
+    .tri:nth-child(1) {
+      left: 30px
+    }
+
+    .tri:nth-child(2) {
+      left: 15px;
+      top: 27px;
+      animation-delay: -125ms
+    }
+
+    .tri:nth-child(3) {
+      left: 30px;
+      top: 27px
+    }
+
+    .tri:nth-child(4) {
+      left: 45px;
+      top: 27px;
+      animation-delay: -625ms
+    }
+
+    .tri:nth-child(5),
+    .tri:nth-child(6) {
+      animation-delay: -250ms;
+      top: 54px
+    }
+
+    .tri:nth-child(6) {
+      left: 15px
+    }
+
+    .tri:nth-child(7) {
+      top: 54px;
+      left: 30px;
+      animation-delay: -375ms
+    }
+
+    .tri:nth-child(8) {
+      top: 54px;
+      left: 45px;
+      animation-delay: -.5s
+    }
+
+    .tri:nth-child(9) {
+      top: 54px;
+      left: 60px;
+      animation-delay: -.5s
+    }
+  </style>
+
+  <noscript>
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
+  </noscript>
 </head>
 
 <body>
-  <div id="app"></div>
-  <noscript>No javascript is avaliable. Please switch your Browser or upgrade to a newer version</noscript>
+  <div id="app">
+    <div id="loader" class="loader">
+      <div class="triangles">
+        <div class="tri invert"></div>
+        <div class="tri invert"></div>
+        <div class="tri"></div>
+        <div class="tri invert"></div>
+        <div class="tri invert"></div>
+        <div class="tri"></div>
+        <div class="tri invert"></div>
+        <div class="tri"></div>
+        <div class="tri invert"></div>
+      </div>
+    </div>
+  </div>
+  <noscript>The Browser you are using is not supported. Please switch to a never version, browser or use any other devices to access
+    thise website.</noscript>
 </body>
 <script>
-  window.$docsify = {
-    auto2top: true,
-    search: {
-      placeholder: 'Type to search...',
-      noData: 'No Results!'
-    },
-    name: 'Better GT-MP Wiki',
-    maxLevel: 3,
-    subMaxLevel: 2,
-    loadSidebar: true,
-    // coverpage: true,
-    autoHeader: true,
-    repo: 'Sascha8a/BetterGTMPWiki',
-    formatUpdated: '{DD}.{MM}.{YYYY} {HH}:{mm}',
-    plugins: [
-      function (hook, vm) {
-        hook.beforeEach(function (html) {
-          var url = 'https://github.com/QingWei-Li/docsify/blob/master/docs/' + vm.route.file
-          var editHtml = '[:memo: Edit on Github](' + url + ')\n'
-          return editHtml
-            + html
-            + '\n----\n'
-            + 'Last modified {docsify-updated} '
-        })
+      window.$docsify = {
+        auto2top: true,
+        search: {
+          placeholder: 'Type to search...',
+          noData: 'No Results!'
+        },
+        name: 'Better GT-MP Wiki',
+        maxLevel: 3,
+        subMaxLevel: 2,
+        loadSidebar: true,
+        // coverpage: true,
+        autoHeader: true,
+        repo: 'Sascha8a/BetterGTMPWiki',
+        formatUpdated: '{DD}.{MM}.{YYYY} {HH}:{mm}',
+        plugins: [
+          function (hook, vm) {
+            hook.beforeEach(function (html) {
+              var url = 'https://github.com/QingWei-Li/docsify/blob/master/docs/' + vm.route.file
+              var editHtml = '[:memo: Edit on Github](' + url + ')\n'
+              return editHtml
+                + html
+                + '\n----\n'
+                + 'Last modified {docsify-updated} '
+            })
+          }
+        ]
       }
-    ]
-  }
 
 </script>
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-csharp.min.js"></script>
+<script async src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script async src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script async src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+<script async src="//unpkg.com/prismjs/components/prism-csharp.min.js"></script>
 <script>
   if (typeof navigator.serviceWorker !== 'undefined') {
     navigator.serviceWorker.register('sw.js')
