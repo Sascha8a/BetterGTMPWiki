@@ -8,7 +8,6 @@ module.exports = async (file) => {
     let match = regex.exec(fileContent)
     if (match === null) break
     let exactMatch = match[2]
-    console.log(exactMatch)
     fileContent = fileContent.replace(match[0], `[${exactMatch}](${getFromIndex(exactMatch)})`)
   }
   await fs.unlink(file)

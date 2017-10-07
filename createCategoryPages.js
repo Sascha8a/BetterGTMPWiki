@@ -4,7 +4,11 @@ const fs = require('fs-extra')
 const getContentFromPage = require('./getContentFromPage')
 const writeToFile = require('./writeToFile')
 const extractFirstSyntaxHightlight = require('./extractFirstSyntaxHightlight')
+const extractUsageExample = require('./extractUsageExample')
 const addToIndex = require('./linkIndex').addToIndex
+const replaceNoteBlocks = require('./replaceNoteBlocks')
+const replaceSyntaxHightlighting = require('./replaceSyntaxHightlighting')
+const replacePlaceholder = require('./replacePlaceholder')
 
 function validateCategory (content) {
   if (!content.includes('==Syntax==')) return false
@@ -12,10 +16,11 @@ function validateCategory (content) {
   return true
 }
 
-function generateCategoryMarkdown (title, description, syntax) {
+function generateCategoryMarkdown (title, description, syntax, usage) {
   let markdown = `## ${title}
 ${description}
 ${syntax}
+${usage !== '' ? '### Usage example(s)\n' + usage : '!> **TODO: ** Add usage example!'}
 `
 
   return markdown
@@ -68,7 +73,12 @@ async function writeCategoryToFile (category) {
       errors += 1
     } else {
       addToIndex(category, page.title)
-      let fileContents = generateCategoryMarkdown(page.title, extractDescription(content), extractFirstSyntaxHightlight(content))
+      let fileContents = generateCategoryMarkdown(page.title, extractDescription(content), extractFirstSyntaxHightlight(content), extractUsageExample(content))
+
+      fileContents = replaceNoteBlocks(fileContents)
+      fileContents = replaceSyntaxHightlighting(fileContents)
+      fileContents = replacePlaceholder(fileContents)
+
       await writeToFile('./temp/' + category, page.title, fileContents)
       success += 1
     }
@@ -87,8 +97,10 @@ async function getPagesInCategory (category) {
 }
 
 async function createCategoryPages () {
-  await writeCategoryToFile('API_Server')
-  await writeCategoryToFile('API_Client')
+  await Promise.all([
+    writeCategoryToFile('API_Server'),
+    writeCategoryToFile('API_Client')
+  ])
 }
 
 module.exports = createCategoryPages
