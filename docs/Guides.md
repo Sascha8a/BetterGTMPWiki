@@ -1,1 +1,1 @@
-- [Simple CEF Boilerplate](Simple_CEF_Boilerplate.md)
+- [Simple CEF Boilerplate](guides/Simple_CEF_Boilerplate.md)
