@@ -9,8 +9,8 @@ Each Cef browser runs JavaScript in a seperate context - the two contexts can co
   - [ResourceCall](/API_Client.md?id=ResourceCall)
   - [ResourceEval](/API_Client.md?id=ResourceEval)
 - Client => Browser:
-  - [browser.call](/API_Client.md?id=browser.call)
-  - [browser.eval](/API_Client.md?id=browser.eval)
+  - [browser.call](/API_Client.md?id=browsercall)
+  - [browser.eval](/API_Client.md?id=browsereval)
 
 ----
 
