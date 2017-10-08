@@ -76,7 +76,7 @@ class Cef {
 ----
 The following files are a boilerplate website, for demonstrating purposes only.
 - clientside/resources/boilerplate.html
-```javascript
+```html
 <!doctype html>
 <html>
     <head>
@@ -92,7 +92,7 @@ The following files are a boilerplate website, for demonstrating purposes only.
 ```
 
 - clientside/resources/boilerplate.css
-```javascript
+```css
 body {
     min-height: 100vh;
     margin: 0;
@@ -101,7 +101,7 @@ body {
 ```
 
 - meta.xml
-```javascript
+```xml
 <meta>
     <!-- Boilerplate-->        
         <file src="clientside/resources/boilerplate.css" />    
