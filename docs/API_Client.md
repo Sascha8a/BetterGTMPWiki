@@ -9,9 +9,6 @@ UIMenu API.addSubMenu(UIMenu menu, string text);
 UIMenu API.addSubMenu(UIMenu menu, string text, string description, bool UseParentXY);
 ```
 
-***
-
-
 ## AddTextElement
 Adds a text element on the screen. Essentially is the same as [DrawText](API_Client.md?id=drawtext), but you don't need to draw it every frame yourself.
 
