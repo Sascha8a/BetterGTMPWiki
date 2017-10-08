@@ -1,3 +1,5 @@
+# Simple CEF Boilerplate
+
 
 To start of, we are speaking of two different contexts in the clientside JavaScript:
 - Resource / Game Context
@@ -70,10 +72,11 @@ class Cef {
   setOpen (newValue) { this.open = newValue }
 }
 ```
+
 ----
 The following files are a boilerplate website, for demonstrating purposes only.
-* clientside/resources/boilerplate.html
-<syntaxhighlight lang="html">
+- clientside/resources/boilerplate.html
+```javascript
 <!doctype html>
 <html>
     <head>
@@ -86,17 +89,19 @@ The following files are a boilerplate website, for demonstrating purposes only.
         <p>Hello world! This is HTML5 Boilerplate.</p>
     </body>
 </html>
-</syntaxhighlight>
-* clientside/resources/boilerplate.css
-<syntaxhighlight lang="CSS">
+```
+
+- clientside/resources/boilerplate.css
+```javascript
 body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
 }
-</syntaxhighlight>
-* meta.xml
-<syntaxhighlight lang="XML">
+```
+
+- meta.xml
+```javascript
 <meta>
     <!-- Boilerplate-->        
         <file src="clientside/resources/boilerplate.css" />    
@@ -105,5 +110,5 @@ body {
     <!-- Main -->
         <script src="clientside/main.js" type="client" lang="javascript" />
 </meta>
-</syntaxhighlight>
+```
 
