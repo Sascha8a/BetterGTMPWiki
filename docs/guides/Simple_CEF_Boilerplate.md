@@ -15,7 +15,7 @@ Each Cef browser runs JavaScript in a seperate context - the two contexts can co
 This is a simple Cef class created using the newest ES2015 Syntax. Paste this inside your Client and you're off to a great start!
 
 - clientside/main.js
-<syntaxhighlight lang="javascript">
+```javascript
 class Cef {
   constructor (name, path) {
     this.cursor = false
@@ -69,7 +69,7 @@ class Cef {
 
   setOpen (newValue) { this.open = newValue }
 }
-</syntaxhighlight>
+```
 ----
 The following files are a boilerplate website, for demonstrating purposes only.
 * clientside/resources/boilerplate.html
