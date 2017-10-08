@@ -4,5 +4,5 @@
   - [Server-side Events](Events_Server.md)
   - [Client-side Events](Events_Client.md)
   - [Shared Events](Events.md)
-  - [Player Properties] (Player_Prop.md)
-  - [Vehicle Properties] (Vehicle_Prop.md)
+  - [Player Properties](Player_Prop.md)
+  - [Vehicle Properties](Vehicle_Prop.md)
