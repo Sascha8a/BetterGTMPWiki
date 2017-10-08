@@ -1,5 +1,5 @@
-const fetch = require('node-fetch')
 const fs = require('fs-extra')
+const fetch = require('node-fetch')
 
 const getContentFromPage = require('./getContentFromPage')
 const writeToFile = require('./writeToFile')
@@ -62,29 +62,24 @@ async function writeCategoryToFile (category) {
   await fs.emptyDir('./temp/' + category)
   let pages = await getPagesInCategory(category)
 
-  let success = 0
-  let errors = 0
-
   for (let page of pages) {
     let content = await getContentFromPage(page.title)
+    let fileContents = ''
 
-    if (!validateCategory(content)) {
-      await writeToFile('errors', page.title, content)
-      errors += 1
+    if (!content.includes('==Syntax==')) {
+      fileContents = generateCategoryMarkdown(page.title, extractDescription(content), '!> **TODO: ** Add Syntax', extractUsageExample(content))
     } else {
-      addToIndex(category, page.title)
-      let fileContents = generateCategoryMarkdown(page.title, extractDescription(content), extractFirstSyntaxHightlight(content), extractUsageExample(content))
-
-      fileContents = replaceNoteBlocks(fileContents)
-      fileContents = replaceSyntaxHightlighting(fileContents)
-      fileContents = replacePlaceholder(fileContents)
-
-      await writeToFile('./temp/' + category, page.title, fileContents)
-      success += 1
+      fileContents = generateCategoryMarkdown(page.title, extractDescription(content), extractFirstSyntaxHightlight(content), extractUsageExample(content))
     }
-  }
 
-  console.log(category, success, errors)
+    addToIndex(category, page.title)
+
+    fileContents = replaceNoteBlocks(fileContents)
+    fileContents = replaceSyntaxHightlighting(fileContents)
+    fileContents = replacePlaceholder(fileContents)
+
+    await writeToFile('./temp/' + category, page.title, fileContents)
+  }
 
   let concatText = await concatTemp(category)
   await writeToFile('docs', category, concatText)
