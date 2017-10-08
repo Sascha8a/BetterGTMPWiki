@@ -31,8 +31,16 @@
   <meta name="full-screen" content="yes">
   <meta name="browsermode" content="application">
 
+  <!-- Theme Override --> 
+
+  <style>
+    * {
+      --theme-color: #e53935;
+    }
+  </style>
+
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="preload" href="//unpkg.com/docsify/lib/themes/vue.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="//unpkg.com/docsify/themes/vue.css" as="style" onload="this.rel='stylesheet'">
   <link rel="preload" href="//unpkg.com/docsify-copy-code/styles.css" as="style" onload="this.rel='stylesheet'">
 
   <link rel="manifest" href="manifest.json">
@@ -188,9 +196,9 @@
           placeholder: 'Type to search...',
           noData: 'No Results!'
         },
-        name: 'Better GT-MP Wiki',
+        name: '<img src="https://wiki.gt-mp.net/resources/assets/wiki.png?89a1e" />',
         maxLevel: 3,  
-        subMaxLevel: 2,
+        subMaxLevel: 1,
         loadSidebar: true,
         // coverpage: true,
         autoHeader: true,
