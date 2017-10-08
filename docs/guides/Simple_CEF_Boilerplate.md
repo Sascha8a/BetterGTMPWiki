@@ -7,10 +7,10 @@ To start of, we are speaking of two different contexts in the clientside JavaScr
 Each Cef browser runs JavaScript in a seperate context - the two contexts can communicate using the following functions:
 - Browser/cef => Client:
   - [ResourceCall](/API_Client.md?id=ResourceCall)
-  - ResourceEval
+  - [ResourceEval](/API_Client.md?id=ResourceEval)
 - Client => Browser:
-  - browser.call
-  - browser.eval
+  - [browser.call](/API_Client.md?id=browser.call)
+  - [browser.eval](/API_Client.md?id=browser.eval)
 
 ----
 
