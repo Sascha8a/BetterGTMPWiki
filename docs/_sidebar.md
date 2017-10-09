@@ -1,10 +1,10 @@
 - References
-  - [Server-side Functions](API_Server.md)
-  - [Client-side Functions](API_Client.md)
-  - [Server-side Events](Events_Server.md)
-  - [Client-side Events](Events_Client.md)
-  - [Shared Events](Events.md)
-  - [Player Properties](Player_Prop.md)
-  - [Vehicle Properties](Vehicle_Prop.md)
+  - [Server-side Functions](api/Server.md)
+  - [Client-side Functions](api/Client.md)
+  - [Server-side Events](events/Server.md)
+  - [Client-side Events](events/Client.md)
+  - [Shared Events](events/Shared.md)
+  - [Player Properties](entities/Player.md)
+  - [Vehicle Properties](entities/Vehicle.md)
   
   - [Guides](Guides.md)

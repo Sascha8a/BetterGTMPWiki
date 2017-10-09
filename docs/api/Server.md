@@ -102,7 +102,7 @@ The actual height is from the lowest to the highest point on the map
 
 
 ## Create3DColShape
-Creates a 3D collision shape which checks whether an entity is inside of a rectangular area. If you don't care about the height, you can use [create2DColShape](API_Server.md?id=create2dcolshape) instead.
+Creates a 3D collision shape which checks whether an entity is inside of a rectangular area. If you don't care about the height, you can use [create2DColShape](api/Server.md?id=create2dcolshape) instead.
 
 ?> *Note:* If shared API was used when creating, then the created entities are not deleted on ResourceStop
 
@@ -166,7 +166,7 @@ private void M_colShape_onEntityEnterColShape(ColShape shape, NetHandle entity)
 
 ## CreateLoopedParticleEffectOnEntity
 Creates a looped Particle effect on an entity.
-This function is similar to [createParticleEffectOnEntity](API_Server.md?id=createparticleeffectonentity) but is looped and returns a NetHandle.
+This function is similar to [createParticleEffectOnEntity](api/Server.md?id=createparticleeffectonentity) but is looped and returns a NetHandle.
 
 ```csharp
 API.createLoopedParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandle entity, Vector3 offset, Vector3 rotation, float scale, int bone = -1, int dimension = 0);
@@ -182,7 +182,7 @@ API.createLoopedParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandl
 
 ## CreateLoopedParticleEffectOnPosition
 Creates a looped Particle effect on a position.
-This function is similar to [createParticleEffectOnPosition](API_Server.md?id=createparticleeffectonposition) but is looped and returns a NetHandle.
+This function is similar to [createParticleEffectOnPosition](api/Server.md?id=createparticleeffectonposition) but is looped and returns a NetHandle.
 
 ```csharp
 API.createLoopedParticleEffectOnPosition(string ptfxLib, string ptfxName, Vector3 position, Vector3 rotation, float scale, int dimension = 0);
@@ -197,7 +197,7 @@ NetHandle myEffect = API.createLoopedParticleEffectOnPosition(ptfxLib, ptfxName,
 
 ## CreateParticleEffectOnEntity
 Creates a Particle effect on an entity.
-This function is similar to [createLoopedParticleEffectOnEntity](API_Server.md?id=createloopedparticleeffectonentity) but isn't looped so a NetHandle isn't returned.
+This function is similar to [createLoopedParticleEffectOnEntity](api/Server.md?id=createloopedparticleeffectonentity) but isn't looped so a NetHandle isn't returned.
 
 ```csharp
 API.createParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandle entity, Vector3 offset, Vector3 rotation, float scale, int bone = -1, int dimension = 0);
@@ -213,7 +213,7 @@ API.createParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandle enti
 
 ## CreateParticleEffectOnPosition
 Creates a Particle effect on a position.
-This function is similar to [createLoopedParticleEffectOnPosition](API_Server.md?id=createloopedparticleeffectonposition) but isn't looped so a NetHandle isn't returned.
+This function is similar to [createLoopedParticleEffectOnPosition](api/Server.md?id=createloopedparticleeffectonposition) but isn't looped so a NetHandle isn't returned.
 
 ```csharp
 API.createParticleEffectOnPosition(string ptfxLib, string ptfxName, Vector3 position, Vector3 rotation, float scale, int dimension = 0);
@@ -393,8 +393,8 @@ public void RestartCommand(Client sender, string name)
 
 
 ## DownloadData
-Transfers a string to the given client. Client scripts then receive this data in [onCustomDataReceived](API_Client.md?id=oncustomdatareceived).
-This is asynchronous, but is often not as fast as sending big chunks of data directly through [triggerClientEvent](API_Server.md?id=triggerclientevent), so choose wisely.
+Transfers a string to the given client. Client scripts then receive this data in [onCustomDataReceived](api/Client.md?id=oncustomdatareceived).
+This is asynchronous, but is often not as fast as sending big chunks of data directly through [triggerClientEvent](api/Server.md?id=triggerclientevent), so choose wisely.
 
 ```csharp
 API.downloadData(Client target, string data, int id = 0);
@@ -471,7 +471,7 @@ public void FreezeTimeCommand(Client sender, bool frozen)
 
 
 ## GenerateBCryptSalt
-Generates a salt for use with the [getPasswordHashBCrypt](API_Server.md?id=getpasswordhashbcrypt) method.
+Generates a salt for use with the [getPasswordHashBCrypt](api/Server.md?id=getpasswordhashbcrypt) method.
 
 ```csharp
 string API.generateBCryptSalt();
@@ -524,7 +524,7 @@ API.getAllColShapes();
 
 
 ## GetAllEntityData
-Gets all keys set in the server's entity data, set with [setEntityData](API_Server.md?id=setentitydata).
+Gets all keys set in the server's entity data, set with [setEntityData](api/Server.md?id=setentitydata).
 
 ```csharp
 API.getAllEntityData(NetHandle entity);
@@ -606,7 +606,7 @@ API.getCurrentMap();
 
 
 ## GetEntityData
-Gets entity data that was set with [setEntityData](API_Server.md?id=setentitydata).
+Gets entity data that was set with [setEntityData](api/Server.md?id=setentitydata).
 Note that this data is in a different state than synced data that you set with [setEntitySyncedData](). To get synced data, use [getEntitySyncedData]() instead.
 
 ```csharp
@@ -1481,7 +1481,7 @@ public void outputResourceInfo()
 
 
 ## GetTrafficLightsInterval
-'''See also:''' [SetTrafficLightsInterval](API_Server.md?id=settrafficlightsinterval)
+'''See also:''' [SetTrafficLightsInterval](api/Server.md?id=settrafficlightsinterval)
 Returns the current Traffic Lights Interval on the Server.
 
 ```csharp
@@ -2274,7 +2274,7 @@ API.registerCustomColShape(ColShape shape);
 
 
 ## RemoveIplForPlayer
-'''See also:''' [RequestIplForPlayer](API_Server.md?id=requestiplforplayer)
+'''See also:''' [RequestIplForPlayer](api/Server.md?id=requestiplforplayer)
 Removes the specified Ipl for the specified player.
 
 ```csharp
@@ -2301,7 +2301,7 @@ API.repairVehicle(NetHandle vehicle);
 
 
 ## RequestIplForPlayer
-'''See also:''' [RemoveIplForPlayer](API_Server.md?id=removeiplforplayer)
+'''See also:''' [RemoveIplForPlayer](api/Server.md?id=removeiplforplayer)
 Requests the specified Ipl for the specified player.
 
 ```csharp
@@ -2354,7 +2354,7 @@ API.respawnPickup(NetHandle pickup);
 
 ## RestartResource
 Stops the given resource and starts it again afterwards.
-'''See also:''' [StartResource](API_Server.md?id=startresource), [StopResource](API_Server.md?id=stopresource)
+'''See also:''' [StartResource](api/Server.md?id=startresource), [StopResource](api/Server.md?id=stopresource)
 
 ```csharp
 bool API.restartResource(string name);
@@ -2528,7 +2528,7 @@ API.setCommandErrorMessage("~r~ERROR:~w~ Read the damn manual! That's not a comm
 
 ## SetDefaultLanguage
 Sets the default language of all resources.
-'''See:''' [tryGetLocalizedGameText](API_Server.md?id=trygetlocalizedgametext)
+'''See:''' [tryGetLocalizedGameText](api/Server.md?id=trygetlocalizedgametext)
 
 ```csharp
 API.setDefaultLanguage(SupportedLocalizations language);
@@ -2856,7 +2856,7 @@ API.setTextLabelRange(NetHandle textLabel, float range);
 
 
 ## SetTrafficLightsInterval
-'''See also:''' [GetTrafficLightsInterval](API_Server.md?id=gettrafficlightsinterval)
+'''See also:''' [GetTrafficLightsInterval](api/Server.md?id=gettrafficlightsinterval)
 Sets the Traffic Lights Interval on the Server
 '''Default is:''' 600 
 This interval is the amount of milliseconds in which the traffic lights gets updated. Lowering the interval makes traffic lights switch faster.
@@ -2924,7 +2924,7 @@ API.setWorldData(string key, object value);
 
 ## StartResource
 Starts the given resource.
-'''See also:''' [RestartResource](API_Server.md?id=restartresource), [StopResource](API_Server.md?id=stopresource)
+'''See also:''' [RestartResource](api/Server.md?id=restartresource), [StopResource](api/Server.md?id=stopresource)
 
 ```csharp
 API.startResource(string resourceName);
@@ -2983,7 +2983,7 @@ API.stopPedAnimation(NetHandle ped);
 
 ## StopResource
 Stops the given resource.
-'''See also:''' [StartResource](API_Server.md?id=startresource), [RestartResource](API_Server.md?id=restartresource)
+'''See also:''' [StartResource](api/Server.md?id=startresource), [RestartResource](api/Server.md?id=restartresource)
 
 ```csharp
 API.stopResource(string name);
@@ -3046,8 +3046,8 @@ Output example between the two functioned mentioned in the description:
 
 
 ## TriggerClientEvent
-Triggers a client-side script event call from server-side to a Player. For the inverse method of this (client to server), see [triggerServerEvent](API_Client.md?id=triggerserverevent).
-This method triggers the client-side [onServerEventTrigger](API_Client.md?id=onservereventtrigger) event.
+Triggers a client-side script event call from server-side to a Player. For the inverse method of this (client to server), see [triggerServerEvent](api/Client.md?id=triggerserverevent).
+This method triggers the client-side [onServerEventTrigger](api/Client.md?id=onservereventtrigger) event.
 ''Warning:'' This function should not be called under client connection events. ([onPlayerConnected]() or [onPlayerBeginConnect]()) - It will not be triggered. Instead, you should wait for [onPlayerFinishedDownload]().
 
 ?> *Note:* undefined
@@ -3062,7 +3062,7 @@ API.triggerClientEvent(Client player, string eventName, params object[] args);
 
 
 ## TriggerClientEventForAll
-Triggers a client-side script event call from server-side to all players. To trigger an event for a single player, use [triggerClientEvent](API_Server.md?id=triggerclientevent).
+Triggers a client-side script event call from server-side to all players. To trigger an event for a single player, use [triggerClientEvent](api/Server.md?id=triggerclientevent).
 
 ?> *Note:* undefined
 ```csharp
@@ -3078,7 +3078,7 @@ API.triggerClientEventForAll(string eventName, params object[] args);
 ## TryGetLocalizedGameText
 Returns if there is a localized gametext in the provided language available. 
 If so, the specified variable under <code>out string translation</code> will be filled with the translated text.
-'''Hint:''' Use [setDefaultLanguage](API_Server.md?id=setdefaultlanguage) to set the default language globally.
+'''Hint:''' Use [setDefaultLanguage](api/Server.md?id=setdefaultlanguage) to set the default language globally.
 
 ```csharp
 API.tryGetLocalizedGameText(string gameText, out string translation, SupportedLocalizations language = SupportedLocalizations.Default);
@@ -3106,7 +3106,7 @@ public void TranslateText(Client player, string text)
 
 
 ## UnspectatePlayer
-This function works if you are spectating on a player using the function [setPlayerToSpectatePlayer](API_Server.md?id=setplayertospectateplayer) and this function will unspectate you if you are spectating a player.
+This function works if you are spectating on a player using the function [setPlayerToSpectatePlayer](api/Server.md?id=setplayertospectateplayer) and this function will unspectate you if you are spectating a player.
 
 ```csharp
 API.unspectatePlayer(Client player);
