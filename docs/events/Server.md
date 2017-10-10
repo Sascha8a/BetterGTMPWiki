@@ -1,3 +1,4 @@
+# Server Events
 ## OnChatCommand
 This type of event is mainly used for commands handling but is a '''very legacy''' way of doing commands and is '''not recommended''', new ways of command handling (Reference [[Getting_Started_with_Commands |here]]) are proven to be more performant, efficient and easier to code.
 

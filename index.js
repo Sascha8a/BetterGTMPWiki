@@ -4,7 +4,7 @@ const replaceLinksInFile = require('./replaceLinksInFile')
 
 async function main () {
   await Promise.all([
-    // createCategoryPages(),
+    createCategoryPages(),
     createEventPages()
   ])
   replaceLinksInFile('./docs/API_Server.md')

@@ -1,4 +1,3 @@
-# Server-side Functions
 ## AttachEntityToEntity
 Attaches an entity to another one.
 Can later be detached using [detachEntity]().
@@ -91,9 +90,9 @@ var shape = API.create2DColShape(100.0f, 100.0f, 50.0f, 50.0f);
 
 
 ?> *Note:* 
-'''x''' is the '''width'''
+x is the width
 
-'''y''' is the '''height'''
+y is the height
 
 The actual height is from the lowest to the highest point on the map
 
@@ -103,7 +102,7 @@ The actual height is from the lowest to the highest point on the map
 
 
 ## Create3DColShape
-Creates a 3D collision shape which checks whether an entity is inside of a rectangular area. If you don't care about the height, you can use [create2DColShape](api/Server.md?id=create2dcolshape) instead.
+Creates a 3D collision shape which checks whether an entity is inside of a rectangular area. If you don't care about the height, you can use [create2DColShape](API_Server.md?id=create2dcolshape) instead.
 
 ?> *Note:* If shared API was used when creating, then the created entities are not deleted on ResourceStop
 
@@ -155,11 +154,11 @@ private void M_colShape_onEntityEnterColShape(ColShape shape, NetHandle entity)
 
 ?> *Note:* 
 
-'''position''': center of the cylinder
+position: center of the cylinder
 
-'''range''': radius
+range: radius
 
-'''height''': position.Z + height & position.Z - height (this means, when the height parameter is 5 then is the cylinder 10 high)
+height: position.Z + height & position.Z - height (this means, when the height parameter is 5 then is the cylinder 10 high)
 
 [https://gt-mp.net/forum/thread/772-colshape-debug-resource/ Resource for Debug]
 
@@ -167,7 +166,7 @@ private void M_colShape_onEntityEnterColShape(ColShape shape, NetHandle entity)
 
 ## CreateLoopedParticleEffectOnEntity
 Creates a looped Particle effect on an entity.
-This function is similar to [createParticleEffectOnEntity](api/Server.md?id=createparticleeffectonentity) but is looped and returns a NetHandle.
+This function is similar to [createParticleEffectOnEntity](API_Server.md?id=createparticleeffectonentity) but is looped and returns a NetHandle.
 
 ```csharp
 API.createLoopedParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandle entity, Vector3 offset, Vector3 rotation, float scale, int bone = -1, int dimension = 0);
@@ -183,7 +182,7 @@ API.createLoopedParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandl
 
 ## CreateLoopedParticleEffectOnPosition
 Creates a looped Particle effect on a position.
-This function is similar to [createParticleEffectOnPosition](api/Server.md?id=createparticleeffectonposition) but is looped and returns a NetHandle.
+This function is similar to [createParticleEffectOnPosition](API_Server.md?id=createparticleeffectonposition) but is looped and returns a NetHandle.
 
 ```csharp
 API.createLoopedParticleEffectOnPosition(string ptfxLib, string ptfxName, Vector3 position, Vector3 rotation, float scale, int dimension = 0);
@@ -198,7 +197,7 @@ NetHandle myEffect = API.createLoopedParticleEffectOnPosition(ptfxLib, ptfxName,
 
 ## CreateParticleEffectOnEntity
 Creates a Particle effect on an entity.
-This function is similar to [createLoopedParticleEffectOnEntity](api/Server.md?id=createloopedparticleeffectonentity) but isn't looped so a NetHandle isn't returned.
+This function is similar to [createLoopedParticleEffectOnEntity](API_Server.md?id=createloopedparticleeffectonentity) but isn't looped so a NetHandle isn't returned.
 
 ```csharp
 API.createParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandle entity, Vector3 offset, Vector3 rotation, float scale, int bone = -1, int dimension = 0);
@@ -214,7 +213,7 @@ API.createParticleEffectOnEntity(string ptfxLib, string ptfxName, NetHandle enti
 
 ## CreateParticleEffectOnPosition
 Creates a Particle effect on a position.
-This function is similar to [createLoopedParticleEffectOnPosition](api/Server.md?id=createloopedparticleeffectonposition) but isn't looped so a NetHandle isn't returned.
+This function is similar to [createLoopedParticleEffectOnPosition](API_Server.md?id=createloopedparticleeffectonposition) but isn't looped so a NetHandle isn't returned.
 
 ```csharp
 API.createParticleEffectOnPosition(string ptfxLib, string ptfxName, Vector3 position, Vector3 rotation, float scale, int dimension = 0);
@@ -268,6 +267,7 @@ var shape = API.createSphereColShape(new Vector3(100.0f, 100.0f, 100.0f), 50.0f)
 [https://gt-mp.net/forum/thread/772-colshape-debug-resource/ Resource for Debug]
 
 ## Delay
+'''See also:''' [startTimer](API_Server.md?id=starttimer)
 Calls the given function in a separate thread after a given time span.
 
 ```csharp
@@ -391,11 +391,9 @@ public void RestartCommand(Client sender, string name)
 ```
 
 
-
-
 ## DownloadData
-Transfers a string to the given client. Client scripts then receive this data in [onCustomDataReceived](api/Client.md?id=oncustomdatareceived).
-This is asynchronous, but is often not as fast as sending big chunks of data directly through [triggerClientEvent](api/Server.md?id=triggerclientevent), so choose wisely.
+Transfers a string to the given client. Client scripts then receive this data in [onCustomDataReceived](API_Client.md?id=oncustomdatareceived).
+This is asynchronous, but is often not as fast as sending big chunks of data directly through [triggerClientEvent](API_Server.md?id=triggerclientevent), so choose wisely.
 
 ```csharp
 API.downloadData(Client target, string data, int id = 0);
@@ -450,7 +448,6 @@ public void FreezeCommand(Client sender, bool frozen)
 ```
 
 
-
 ## FreezePlayerTime
 Freezes or unfreezes the world time for the given player.
 
@@ -469,10 +466,8 @@ public void FreezeTimeCommand(Client sender, bool frozen)
 ```
 
 
-
-
 ## GenerateBCryptSalt
-Generates a salt for use with the [getPasswordHashBCrypt](api/Server.md?id=getpasswordhashbcrypt) method.
+Generates a salt for use with the [getPasswordHashBCrypt](API_Server.md?id=getpasswordhashbcrypt) method.
 
 ```csharp
 string API.generateBCryptSalt();
@@ -525,7 +520,7 @@ API.getAllColShapes();
 
 
 ## GetAllEntityData
-Gets all keys set in the server's entity data, set with [setEntityData](api/Server.md?id=setentitydata).
+Gets all keys set in the server's entity data, set with [setEntityData](API_Server.md?id=setentitydata).
 
 ```csharp
 API.getAllEntityData(NetHandle entity);
@@ -607,7 +602,7 @@ API.getCurrentMap();
 
 
 ## GetEntityData
-Gets entity data that was set with [setEntityData](api/Server.md?id=setentitydata).
+Gets entity data that was set with [setEntityData](API_Server.md?id=setentitydata).
 Note that this data is in a different state than synced data that you set with [setEntitySyncedData](). To get synced data, use [getEntitySyncedData]() instead.
 
 ```csharp
@@ -674,7 +669,6 @@ API.getGamemodeName();
 API.getGamemodeName();
 ```
 
-
 ## GetHashBCrypt
 Hashes a string using the OpenBSD bcrypt scheme.
 
@@ -687,6 +681,19 @@ API.getPasswordHashBCrypt(string input);
 ```
 ```csharp
 API.getPasswordHashBCrypt(string input, int workFactor);
+```
+
+## GetHashSHA256
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+   // For security reasons you should use a salt to encrypt a string when you use it for passwords
+   string sometext = "someText"; // eg password
+   string salt = "someSalt";
+   string securestring = API.getHashSHA256(salt + sometext);
+
 ```
 
 
@@ -714,7 +721,6 @@ API.getMapName();
 ```csharp
 API.getMapName();
 ```
-
 
 ## GetMapsForGamemode
 !> **TODO: ** Add Function Description!
@@ -758,7 +764,6 @@ API.getPasswordHashBCrypt(string input, string salt);
 ```csharp
 API.getPasswordHashBCrypt(string input, int workFactor);
 ```
-
 
 ## GetPickupAmount
 !> **TODO: ** Add Function Description!
@@ -827,7 +832,6 @@ API.getPlayerActiveAsiNames(Client player);
 API.getPlayerActiveAsiNames(Client player);
 ```
 
-
 ## GetPlayerActiveModDlcPacksNames
 Returns a list of all active mod DLC-pack names of the specified player.
 
@@ -838,7 +842,6 @@ API.getPlayerActiveModDlcPacksNames(Client player);
 ```csharp
 API.getPlayerActiveModDlcPacksNames(Client player);
 ```
-
 
 ## GetPlayerAddress
 This function returns the IP address of the given player.
@@ -871,7 +874,6 @@ API.getPlayerAsiHash(Client player, string asiName);
 API.getPlayerAsiHash(Client player, string asiName);
 ```
 
-
 ## GetPlayerCustomScriptNames
 Returns a list of all loaded custom scripts of the specified player.
 
@@ -882,7 +884,6 @@ API.getPlayerCustomScriptNames(Client player);
 ```csharp
 API.getPlayerCustomScriptNames(Client player);
 ```
-
 
 ## GetPlayerFromHandle
 !> **TODO: ** Add Function Description!
@@ -919,7 +920,6 @@ public void SayHiToPlayer(Client player, String hardwareId)
 
 ```
 }}
-
 
 ## GetPlayerFromName
 This method returns a Player param from a given player name, returns '''null''' if the player name does not exist.
@@ -959,7 +959,7 @@ Client API.getPlayerFromSocialClubName(string socialClubName);
 ### Usage example(s)
 The command below will send a "hello message" to a given player based on his social club name.
 
-Example usage: '''/sayhi DurtyFree''' 
+Example usage: /sayhi DurtyFree 
 
 {{inC#|
 ```csharp
@@ -974,7 +974,6 @@ public void SayHiToPlayer(Client player, String playerSocialClub)
 ```
 }}
 
-
 ## GetPlayerModDlcPackHash
 Returns the current hash of the specified mod DLC-pack.
 
@@ -985,7 +984,6 @@ API.getPlayerModDlcPackHash(Client player, string modDlcPack);
 ```csharp
 API.getPlayerModDlcPackHash(Client player, string modDlcPack);
 ```
-
 
 ## GetPlayerNametag
 Gets the Nametag of a specific Player.
@@ -1016,7 +1014,6 @@ string API.getPlayerUniqueHardwareId(Client player);
 ```csharp
    API.getPlayerUniqueHardwareId(Client player);
 ```
-
 
 ## GetPlayerVelocity
 !> **TODO: ** Add Function Description!
@@ -1369,7 +1366,6 @@ bool API.getServerConnectionSlowModeSetting();
 API.getServerConnectionSlowModeSetting();
 ```
 
-
 ## GetServerExploitBlacklistSetting
 This function return the current ExploitBlacklist server setting.
 
@@ -1381,7 +1377,6 @@ bool API.getServerExploitBlacklistSetting();
 API.getServerExploitBlacklistSetting();
 ```
 
-
 ## GetServerHwidDuplicateSetting
 This function return the current HwidDuplicate server setting.
 
@@ -1392,7 +1387,6 @@ bool API.getServerHwidDuplicateSetting();
 ```csharp
 API.getServerHwidDuplicateSetting();
 ```
-
 
 ## GetServerName
 This function return the server name.
@@ -1419,7 +1413,6 @@ string API.getServerPassword();
 ```
 
 
-
 ## GetServerPort
 This function return the server port.
 
@@ -1443,7 +1436,6 @@ bool API.getServerSocialClubDuplicateSetting();
 ```csharp
 API.getServerSocialClubDuplicateSetting();
 ```
-
 
 ## GetTextLabelRange
 Gets the current range of a text label.
@@ -1474,7 +1466,7 @@ public void outputResourceInfo()
 	string name = API.getResourceName(resource);
 	string version = API.getResourceVersion(resource);
 	
-	//Message the server about this resource!
+	// Message the server about this resource!
 	API.sendChatMessageToAll("* Resource: " + name + " - Author: " + author + " - version: " + version);
 }
 
@@ -1482,7 +1474,7 @@ public void outputResourceInfo()
 
 
 ## GetTrafficLightsInterval
-'''See also:''' [SetTrafficLightsInterval](api/Server.md?id=settrafficlightsinterval)
+'''See also:''' [SetTrafficLightsInterval](API_Server.md?id=settrafficlightsinterval)
 Returns the current Traffic Lights Interval on the Server.
 
 ```csharp
@@ -1492,7 +1484,6 @@ int API.getTrafficLightsInterval();
 ```csharp
 API.getTrafficLightsInterval();
 ```
-
 
 ## GetVehicleBones
 Returns a list of available bones for a specified vehicle model.
@@ -1506,7 +1497,6 @@ API.getVehicleBones(VehicleHash model);
 API.getVehicleBones(VehicleHash model);
 ```
 
-
 ## GetVehicleClassName
 Gets the vehicle class name associated with the given vehicle hash / class id. 
 See [[Vehicle Classes]] for a list of classes.
@@ -1514,7 +1504,15 @@ See [[Vehicle Classes]] for a list of classes.
 ```csharp
 API.getVehicleClassName(int classId);
 ```
-!> **TODO: ** Add usage example!
+### Usage example(s)
+!> **TODO: ** Add Example Description!
+```csharp
+API.getVehicleClassName(int classId);
+```
+```csharp
+API.getVehicleClassName(VehicleHash model);
+```
+
 ## GetVehicleDimensions
 Returns the dimensions (size) of a specified vehicle model.
 
@@ -1526,7 +1524,6 @@ API.getVehicleDimensions(VehicleHash model);
 API.getVehicleDimensions(VehicleHash model);
 ```
 
-
 ## GetVehicleDriver
 Returns the driver of the specified vehicle.
 
@@ -1537,7 +1534,6 @@ Client API.getVehicleDriver(NetHandle vehicle);
 ```csharp
 API.getVehicleDriver(NetHandle vehicle);
 ```
-
 
 ## GetVehicleLiverys
 Returns a list of available liveries for a specified vehicle.
@@ -1551,7 +1547,6 @@ API.getVehicleLiverys(VehicleHash model);
 API.getVehicleLiverys(VehicleHash model);
 ```
 
-
 ## GetVehicleManufacturerName
 Returns the specified vehiclemodel's manufacturer name.
 
@@ -1562,7 +1557,6 @@ API.getVehicleManufacturerName(VehicleHash model);
 ```csharp
 API.getVehicleManufacturerName(VehicleHash model);
 ```
-
 
 ## GetVehicleOccupants
 A function that returns the players who are inside a vehicle. 
@@ -1588,7 +1582,7 @@ public void CMD_cmdtest(Client sender)
 
 ```
 
-'''Remember''' that if you're not in any vehicle, the vehicle doesn't exist or is empty, this function '''will not return''' anything.
+Remember that if you're not in any vehicle, the vehicle doesn't exist or is empty, this function will not return anything.
 
 
 ## GetVehicleValidMods
@@ -1602,7 +1596,6 @@ API.getVehicleValidMods(VehicleHash model);
 API.getVehicleValidMods(VehicleHash model);
 ```
 
-
 ## GetVehicleWheelTypeName
 Returns the specified vehicle's classname.
 
@@ -1613,7 +1606,6 @@ API.getVehicleWheelTypeName(VehicleHash model);
 ```csharp
 API.getVehicleWheelTypeName(VehicleHash model);
 ```
-
 
 ## GetWeaponType
 Get the Weapon Type from the specified WeaponHash.
@@ -1626,7 +1618,6 @@ WeaponType API.getWeaponType(WeaponHash weaponHash);
 ```csharp
 API.getWeaponType(WeaponHash weaponHash);
 ```
-
 
 ## GetWeather
 This function return the server weather.
@@ -1713,7 +1704,6 @@ API.hasVehicleBombBay(VehicleHash model);
 API.hasVehicleBombBay(VehicleHash model);
 ```
 
-
 ## HasVehicleForks
 Checks if the specified vehicle model has forks.
 
@@ -1725,7 +1715,6 @@ API.hasVehicleForks(VehicleHash model);
 ```csharp
 API.hasVehicleForks(VehicleHash model);
 ```
-
 
 ## HasVehicleSirens
 Checks if the specified vehicle model has sirens.
@@ -1739,7 +1728,6 @@ API.hasVehicleSirens(VehicleHash model);
 API.hasVehicleSirens(VehicleHash model);
 ```
 
-
 ## HasVehicleTowArm
 Checks if the specified vehicle model has TowArm.
 
@@ -1751,7 +1739,6 @@ API.hasVehicleTowArm(VehicleHash model);
 ```csharp
 API.hasVehicleTowArm(VehicleHash model);
 ```
-
 
 ## HasWorldData
 !> **TODO: ** Add Function Description!
@@ -1827,7 +1814,6 @@ API.isPlayerModDlcPackActive(Client player, string modDlcPack);
 API.isPlayerModDlcPackActive(Client player, string modDlcPack);
 ```
 
-
 ## IsPlayerOpenIVActive
 Checks if the specified player has OpenIV active.
 
@@ -1839,7 +1825,6 @@ API.isPlayerOpenIVActive(Client player);
 API.isPlayerOpenIVActive(Client player);
 ```
 
-
 ## IsPlayerRunningAsi
 Checks if the player runs the specified ASI.
 
@@ -1850,7 +1835,6 @@ API.isPlayerRunningAsi(Client player, string asiName);
 ```csharp
 API.isPlayerRunningAsi(Client player, string asiName);
 ```
-
 
 ## IsResourceRunning
 Checks if the given resource is running.
@@ -1877,7 +1861,6 @@ API.isVehicleAAmphibiousQuadBike(VehicleHash model);
 API.isVehicleAAmphibiousQuadBike(VehicleHash model);
 ```
 
-
 ## IsVehicleAAmphibiousVehicle
 Checks if the specified vehicle model is a Amphibious Vehicle.
 
@@ -1889,7 +1872,6 @@ API.isVehicleAAmphibiousVehicle(VehicleHash model);
 ```csharp
 API.isVehicleAAmphibiousVehicle(VehicleHash model);
 ```
-
 
 ## IsVehicleABicycle
 Checks if the specified vehicle model is a Bicycle.
@@ -1903,7 +1885,6 @@ API.isVehicleABicycle(VehicleHash model);
 API.isVehicleABicycle(VehicleHash model);
 ```
 
-
 ## IsVehicleABike
 Checks if the specified vehicle model is a bike.
 
@@ -1915,7 +1896,6 @@ API.isVehicleABike(VehicleHash model);
 ```csharp
 API.isVehicleABike(VehicleHash model);
 ```
-
 
 ## IsVehicleABlimp
 Checks if the specified vehicle model is a Blimp.
@@ -1929,7 +1909,6 @@ API.isVehicleABlimp(VehicleHash model);
 API.isVehicleABlimp(VehicleHash model);
 ```
 
-
 ## IsVehicleABoat
 Checks if the specified vehicle model is a Boat.
 
@@ -1941,7 +1920,6 @@ API.isVehicleABoat(VehicleHash model);
 ```csharp
 API.isVehicleABoat(VehicleHash model);
 ```
-
 
 ## IsVehicleACar
 Checks if the specified vehicle model is a Car.
@@ -1955,7 +1933,6 @@ API.isVehicleACar(VehicleHash model);
 API.isVehicleACar(VehicleHash model);
 ```
 
-
 ## IsVehicleACargobob
 Checks if the specified vehicle model is a Cargobob.
 
@@ -1967,7 +1944,6 @@ API.isVehicleACargobob(VehicleHash model);
 ```csharp
 API.isVehicleACargobob(VehicleHash model);
 ```
-
 
 ## IsVehicleAEmergencyBoat
 Checks if the specified vehicle model is a Emergency Boat.
@@ -1981,7 +1957,6 @@ API.isVehicleAEmergencyBoat(VehicleHash model);
 API.isVehicleAEmergencyBoat(VehicleHash model);
 ```
 
-
 ## IsVehicleAHeli
 Checks if the specified vehicle model is a Helicopter.
 
@@ -1993,7 +1968,6 @@ API.isVehicleAHeli(VehicleHash model);
 ```csharp
 API.isVehicleAHeli(VehicleHash model);
 ```
-
 
 ## IsVehicleAPlane
 Checks if the specified vehicle model is a Plane.
@@ -2007,7 +1981,6 @@ API.isVehicleAPlane(VehicleHash model);
 API.isVehicleAPlane(VehicleHash model);
 ```
 
-
 ## IsVehicleAQuad
 Checks if the specified vehicle model is a Quad.
 
@@ -2019,7 +1992,6 @@ API.isVehicleAQuad(VehicleHash model);
 ```csharp
 API.isVehicleAQuad(VehicleHash model);
 ```
-
 
 ## IsVehicleATrailer
 Checks if the specified vehicle model is a Trailer.
@@ -2033,7 +2005,6 @@ API.isVehicleATrailer(VehicleHash model);
 API.isVehicleATrailer(VehicleHash model);
 ```
 
-
 ## IsVehicleATrain
 Checks if the specified vehicle model is a Train.
 
@@ -2045,7 +2016,6 @@ API.isVehicleATrain(VehicleHash model);
 ```csharp
 API.isVehicleATrain(VehicleHash model);
 ```
-
 
 ## IsVehicleConvertible
 Checks if the specified vehicle model is a convertible.
@@ -2059,7 +2029,6 @@ API.isVehicleConvertible(VehicleHash model);
 API.isVehicleConvertible(VehicleHash model);
 ```
 
-
 ## IsVehicleElectric
 Checks if the specified vehicle model has an electric engine.
 
@@ -2071,7 +2040,6 @@ API.isVehicleElectric(VehicleHash model);
 ```csharp
 API.isVehicleElectric(VehicleHash model);
 ```
-
 
 ## KickPlayer
 Kicks a player from the server.
@@ -2159,7 +2127,6 @@ public void AdminLogin(Client client, string password)
 ```
 
 
-
 ## LogoutPlayer
 Logs a player out of ACL.
 
@@ -2206,6 +2173,263 @@ API.moveEntityRotation(NetHandle netHandle, Vector3 target, int duration);
 !> **TODO: ** Add Example Description!
 ```csharp
 API.moveEntityRotation(NetHandle netHandle, Vector3 target, int duration);
+```
+
+
+## OnClientEventTrigger
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+Be advised, using large variable types can allocate more than the required memory, which is a waste of memory. Please refer to: [https://msdn.microsoft.com/en-us/library/exx3b86w.aspx Integral Types Table (C# Reference)]
+```csharp
+
+   public void OnClientEvent(Client player, string eventName, params object[] arguments) //arguments param can contain multiple params
+   {
+      if (eventName == "Foo") //an eventname with no params that was triggered from the Client-side script
+      {
+         API.kickPlayer(player, "FOOs don't belong here!"); //code can be anything that does not exist or cannot be called inside the client-side script
+      }
+
+      else if (eventName == "heretakemysecret") //an eventname with a single param
+      {
+         string secret = arguments[0].ToString(); //Since the param came as an object, it should be converted to a string for it to be used as a string
+         API.consoleOutput("Wow! He told me his secret which was: " + secret);
+      }
+
+      else if (eventName == "my3cents") //an eventname with multiple params
+      {
+         byte number1 = (byte)arguments[0]; //Or "byte number1 = Convert.ToByte(argument[0]);" both work the same way, the first is more practical and easier
+         byte number2 = (byte)arguments[1]; //params can be of an infinite number but that will not be necessary
+         API.consoleOutput("Well, the first result is: " + number1 + ", and the second is: " + number2);
+      }
+   }
+
+```
+
+
+## OnEntityEnterColShape
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void OnEntityEnterColShapeHandler(ColShape shape, NetHandle entity)
+{
+     if (API.getEntityType(entity) == EntityType.Player){
+         // It's a Player
+         Client player = API.getPlayerFromHandle(entity); // Fetch the Client
+         API.sendNotificationToPlayer(player, "You have entered a ColShape");
+     }
+}
+
+```
+
+
+## OnEntityExitColShape
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void OnEntityExitColShapeHandler(ColShape shape, NetHandle entity)
+{
+    //Code
+}
+
+```
+
+
+## OnMapChange
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+   private void OnMapChangeHandler(string mapName, XmlGroup map)
+   {
+      API.sendChatMessageToAll("SERVER MAP CHANGED!");
+   }
+
+```
+
+
+## OnPickupRespawn
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void OnPickupRespawnHandler(NetHandle pickup)
+{
+    //Code
+}
+
+```
+
+
+## OnPlayerBeginConnect
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+   private void OnPlayerBeginConnectHandler(Client player, CancelEventArgs e)
+   {
+      API.sendChatMessageToAll(player.name + " has joined the server.");
+   }
+
+```
+Warnings
+
+Do not use [setEntityData](API_Server.md?id=setentitydata) or similar functions in this event as the entity is not yet created.
+
+
+## OnPlayerConnected
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+   private void OnPlayerConnectedHandler(Client player)
+   {
+      API.sendChatMessageToPlayer(player, "Welcome to the server, ~g~" + player.name);
+   }
+
+```
+
+
+## OnPlayerDeath
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+   private void OnPlayerDeathHandler(Client player, NetHandle entityKiller, int weapon) {
+      Client killer = API.getPlayerFromHandle(entityKiller);
+      if (killer != null) {
+         API.sendNotificationToAll(killer.name + " has killed " + player.name);
+      } else {
+         API.sendNotificationToAll(player.name + " died");
+      }
+   }
+
+```
+
+
+## OnPlayerDisconnected
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+   private void OnPlayerDisconnectedHandler(Client player, string reason)
+   {
+      API.sendChatMessageToAll(player.name + " has left the server. (" + reason + ")");
+   }
+
+```
+
+
+## OnPlayerFinishedDownload
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void OnPlayerFinishedDownloadHandler(Client player)
+{
+    API.sendChatMessageToPlayer(player, "There you go! you've finished downloading all the required files and you've been spawned!");
+}
+
+```
+
+
+## OnPlayerRespawn
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+   private void OnPlayerRespawnHandler(Client player)
+   {
+      API.sendChatMessageToPlayer(player, "Yey! You've been spawned!");
+   }
+
+```
+
+
+## OnPlayerWeaponAmmoChange
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void OnPlayerWeaponAmmoChangeHandler(Client client, WeaponHash weapon, int oldAmmo)
+{
+    //Code
+}
+
+```
+
+
+## OnServerResourceStart
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void onServerResourceStartHandler(string resource)
+{
+    //Code
+}
+
+```
+
+
+## OnServerResourceStop
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void OnServerResourceStopHandler(string resource)
+{
+    // Code
+}
+
+```
+
+
+## OnVehicleDeath
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+
+Before we start, myAwesomeVeh variable is of NetHandle type defined somewhere in the script, if missing, it will output an error
+```csharp
+
+   private void OnVehicleDeathHandler(NetHandle vehicle)
+   {
+      if (vehicle == myAwesomeVeh)
+      {
+         API.sendChatMessageToAll("Oh no! that awesome vehicle got destroyed!");
+      }
+   }
+
+```
+
+
+## OnVehicleTrailerChange
+undefined
+!> **TODO: ** Add Syntax
+### Usage example(s)
+```csharp
+
+private void OnVehicleTrailerChangeHandler(NetHandle tower, NetHandle trailer)
+{
+    //Code
+}
+
 ```
 
 
@@ -2275,7 +2499,7 @@ API.registerCustomColShape(ColShape shape);
 
 
 ## RemoveIplForPlayer
-'''See also:''' [RequestIplForPlayer](api/Server.md?id=requestiplforplayer)
+'''See also:''' [RequestIplForPlayer](API_Server.md?id=requestiplforplayer)
 Removes the specified Ipl for the specified player.
 
 ```csharp
@@ -2285,7 +2509,6 @@ API.removeIplForPlayer(Client player, string iplName);
 ```csharp
    API.removeIplForPlayer(Client player, string iplName);
 ```
-
 
 ## RepairVehicle
 This function will repair the vehicle.
@@ -2302,7 +2525,7 @@ API.repairVehicle(NetHandle vehicle);
 
 
 ## RequestIplForPlayer
-'''See also:''' [RemoveIplForPlayer](api/Server.md?id=removeiplforplayer)
+'''See also:''' [RemoveIplForPlayer](API_Server.md?id=removeiplforplayer)
 Requests the specified Ipl for the specified player.
 
 ```csharp
@@ -2312,7 +2535,6 @@ API.requestIplForPlayer(Client player, string iplName);
 ```csharp
    API.requestIplForPlayer(Client player, string iplName);
 ```
-
 
 ## ResetIplList
 !> **TODO: ** Add Function Description!
@@ -2355,7 +2577,6 @@ API.respawnPickup(NetHandle pickup);
 
 ## RestartResource
 Stops the given resource and starts it again afterwards.
-'''See also:''' [StartResource](api/Server.md?id=startresource), [StopResource](api/Server.md?id=stopresource)
 
 ```csharp
 bool API.restartResource(string name);
@@ -2499,7 +2720,6 @@ API.setAclErrorMessage(string msg);
    API.setAclErrorMessage(string msg);
 ```
 
-
 ## SetCollisionBetweenEntities
 !> **TODO: ** Add Function Description!
 
@@ -2529,7 +2749,7 @@ API.setCommandErrorMessage("~r~ERROR:~w~ Read the damn manual! That's not a comm
 
 ## SetDefaultLanguage
 Sets the default language of all resources.
-'''See:''' [tryGetLocalizedGameText](api/Server.md?id=trygetlocalizedgametext)
+'''See:''' [tryGetLocalizedGameText](API_Server.md?id=trygetlocalizedgametext)
 
 ```csharp
 API.setDefaultLanguage(SupportedLocalizations language);
@@ -2538,7 +2758,6 @@ API.setDefaultLanguage(SupportedLocalizations language);
 ```csharp
 API.setDefaultLanguage(SupportedLocalizations language);
 ```
-
 
 ## SetEntityData
 Sets the given data value on the entity. This does not synchronize the data to clients. Use [setEntitySyncedData]() if you want this value to synchronize to clients.
@@ -2587,7 +2806,6 @@ API.setMapName(string newName);
 API.setMapName(string newName);
 ```
 
-
 ## SetMaxPlayers
 Sets the maximum amount of possible players on the server.
 
@@ -2599,7 +2817,6 @@ API.setMaxPlayers(int maxPlayers);
 ```csharp
 API.setMaxPlayers(int maxPlayers);
 ```
-
 
 ## SetPlayerName
 Set the Name of a Player.
@@ -2630,7 +2847,6 @@ API.setPlayerNotFoundArgumentMessage(string msg);
 ```csharp
    API.setPlayerNotFoundArgumentMessage(string msg);
 ```
-
 
 ## SetPlayerSeatbelt
 Puts on or detaches the seatbelt of a player.
@@ -2751,7 +2967,6 @@ API.setServerAllowClientDevToolsSetting(bool enabled);
 
 ```
 
-
 ## SetServerConnectionSlowModeSetting
 Sets the ConnectionSlowMode Server Setting.
 
@@ -2764,7 +2979,6 @@ API.setServerConnectionSlowModeSetting(bool enabled);
 API.setServerConnectionSlowModeSetting(bool enabled);
 
 ```
-
 
 ## SetServerExploitBlacklistSetting
 Sets the ExploitBlacklist Server Setting.
@@ -2779,7 +2993,6 @@ API.setServerExploitBlacklistSetting(bool enabled);
 
 ```
 
-
 ## SetServerHwidDuplicateSetting
 Sets the HwidDuplicate Server Setting.
 
@@ -2792,7 +3005,6 @@ API.setServerHwidDuplicateSetting(bool enabled);
 API.setServerHwidDuplicateSetting(bool enabled);
 
 ```
-
 
 ## SetServerName
 Sets the current server name.
@@ -2843,7 +3055,6 @@ API.setServerSocialClubDuplicateSetting(bool enabled);
 
 ```
 
-
 ## SetTextLabelRange
 Sets the range of a text label.
 
@@ -2857,7 +3068,7 @@ API.setTextLabelRange(NetHandle textLabel, float range);
 
 
 ## SetTrafficLightsInterval
-'''See also:''' [GetTrafficLightsInterval](api/Server.md?id=gettrafficlightsinterval)
+'''See also:''' [GetTrafficLightsInterval](API_Server.md?id=gettrafficlightsinterval)
 Sets the Traffic Lights Interval on the Server
 '''Default is:''' 600 
 This interval is the amount of milliseconds in which the traffic lights gets updated. Lowering the interval makes traffic lights switch faster.
@@ -2870,7 +3081,6 @@ API.setTrafficLightsInterval(int interval);
 API.setTrafficLightsInterval(int interval);
 ```
 
-
 ## SetValueNotFoundArgumentMessage
 Sets the command argument not found message for the argument type value with the specified one.
 '''Default is:''' "~r~ERROR: ~w~ No value named \"{0}\" has been found for argument \"{1}\"!"
@@ -2882,7 +3092,6 @@ API.setValueNotFoundArgumentMessage(string msg);
 ```csharp
    API.setValueNotFoundArgumentMessage(string msg);
 ```
-
 
 ## SetVehicleHealth
 Sets how much health the vehicle has.
@@ -2909,7 +3118,6 @@ API.setVehiclePetrolTankHealth(NetHandle vehicle, float health);
 API.setVehiclePetrolTankHealth(NetHandle vehicle, float health);
 ```
 
-
 ## SetWorldData
 !> **TODO: ** Add Function Description!
 
@@ -2925,7 +3133,6 @@ API.setWorldData(string key, object value);
 
 ## StartResource
 Starts the given resource.
-'''See also:''' [RestartResource](api/Server.md?id=restartresource), [StopResource](api/Server.md?id=stopresource)
 
 ```csharp
 API.startResource(string resourceName);
@@ -2951,12 +3158,21 @@ API.startThread(ThreadStart target);
 
 
 ## StartTimer
+'''See also:''' [Delay](API_Server.md?id=delay)
 Calls the given function in a separate thread after a given time span.
 
 ```csharp
 API.startTimer(int ms, bool once, Action target);
 ```
-!> **TODO: ** Add usage example!
+### Usage example(s)
+```csharp
+
+// This will delay the kick of a player by 5 seconds.
+API.startTimer(5000, true, () => { API.kickPlayer(Client player) });
+
+```
+
+
 ## StopDelay
 Stops a previously created delay.
 
@@ -2967,7 +3183,6 @@ API.stopDelay(Timer timer)
 ```csharp
 API.stopDelay(Timer timer)
 ```
-
 
 ## StopPedAnimation
 !> **TODO: ** Add Function Description!
@@ -2984,7 +3199,7 @@ API.stopPedAnimation(NetHandle ped);
 
 ## StopResource
 Stops the given resource.
-'''See also:''' [StartResource](api/Server.md?id=startresource), [RestartResource](api/Server.md?id=restartresource)
+'''See also:''' [StartResource](API_Server.md?id=startresource), [RestartResource](API_Server.md?id=restartresource)
 
 ```csharp
 API.stopResource(string name);
@@ -3013,7 +3228,6 @@ bool API.stopServer();
 API.stopServer();
 ```
 
-
 ## StopTimer
 Stops a previously created timer.
 
@@ -3024,7 +3238,6 @@ API.stopTimer(Timer timer)
 ```csharp
 API.stopTimer(Timer timer)
 ```
-
 
 ## TickCount
 The value that is returned represents the number of miliseconds intervals that have elapsed since 12:00:00 midnight, January 1, 0001 (0:00:00 UTC on January 1, 0001, in the Gregorian calendar). This is similar to DateTime.Now.Tick property but the latter one returns in nanoseconds (https://msdn.microsoft.com/en-us/library/system.datetime.ticks(v=vs.110).aspx). This function is good for debugging and benchmarking.
@@ -3047,9 +3260,9 @@ Output example between the two functioned mentioned in the description:
 
 
 ## TriggerClientEvent
-Triggers a client-side script event call from server-side to a Player. For the inverse method of this (client to server), see [triggerServerEvent](api/Client.md?id=triggerserverevent).
-This method triggers the client-side [onServerEventTrigger](api/Client.md?id=onservereventtrigger) event.
-''Warning:'' This function should not be called under client connection events. ([onPlayerConnected]() or [onPlayerBeginConnect]()) - It will not be triggered. Instead, you should wait for [onPlayerFinishedDownload]().
+Triggers a client-side script event call from server-side to a Player. For the inverse method of this (client to server), see [triggerServerEvent](API_Client.md?id=triggerserverevent).
+This method triggers the client-side [onServerEventTrigger](API_Client.md?id=onservereventtrigger) event.
+''Warning:'' This function should not be called under client connection events. ([onPlayerConnected](API_Server.md?id=onplayerconnected) or [onPlayerBeginConnect](API_Server.md?id=onplayerbeginconnect)) - It will not be triggered. Instead, you should wait for [onPlayerFinishedDownload](API_Server.md?id=onplayerfinisheddownload).
 
 ?> *Note:* undefined
 ```csharp
@@ -3063,7 +3276,7 @@ API.triggerClientEvent(Client player, string eventName, params object[] args);
 
 
 ## TriggerClientEventForAll
-Triggers a client-side script event call from server-side to all players. To trigger an event for a single player, use [triggerClientEvent](api/Server.md?id=triggerclientevent).
+Triggers a client-side script event call from server-side to all players. To trigger an event for a single player, use [triggerClientEvent](API_Server.md?id=triggerclientevent).
 
 ?> *Note:* undefined
 ```csharp
@@ -3079,7 +3292,7 @@ API.triggerClientEventForAll(string eventName, params object[] args);
 ## TryGetLocalizedGameText
 Returns if there is a localized gametext in the provided language available. 
 If so, the specified variable under <code>out string translation</code> will be filled with the translated text.
-'''Hint:''' Use [setDefaultLanguage](api/Server.md?id=setdefaultlanguage) to set the default language globally.
+'''Hint:''' Use [setDefaultLanguage](API_Server.md?id=setdefaultlanguage) to set the default language globally.
 
 ```csharp
 API.tryGetLocalizedGameText(string gameText, out string translation, SupportedLocalizations language = SupportedLocalizations.Default);
@@ -3105,9 +3318,8 @@ public void TranslateText(Client player, string text)
 
 ```
 
-
 ## UnspectatePlayer
-This function works if you are spectating on a player using the function [setPlayerToSpectatePlayer](api/Server.md?id=setplayertospectateplayer) and this function will unspectate you if you are spectating a player.
+This function works if you are spectating on a player using the function [setPlayerToSpectatePlayer](API_Server.md?id=setplayertospectateplayer) and this function will unspectate you if you are spectating a player.
 
 ```csharp
 API.unspectatePlayer(Client player);
@@ -3117,7 +3329,6 @@ API.unspectatePlayer(Client player);
 ```csharp
 API.unspectatePlayer(Client player);
 ```
-
 
 
 ## VerifyPasswordHashBCrypt
@@ -3130,7 +3341,6 @@ API.verifyPasswordHashBCrypt(string text, string hash);
 ```csharp
 API.verifyPasswordHashBCrypt(string text, string hash);
 ```
-
 
 ## WarpPlayerOutOfVehicle
 Removes a player from his current vehicle

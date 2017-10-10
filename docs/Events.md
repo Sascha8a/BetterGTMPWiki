@@ -1,4 +1,3 @@
-# Shared Events
 ## OnChatCommand
 This type of event is mainly used for commands handling but is a '''very legacy''' way of doing commands and is '''not recommended''', new ways of command handling (Reference [[Getting_Started_with_Commands |here]]) are proven to be more performant, efficient and easier to code.
 
@@ -85,7 +84,7 @@ Be advised, using large variable types can allocate more than the required memor
 
 ## OnCustomDataReceived
 
-Called when the client receives custom data transfered via [downloadData]() by the server.
+Called when the client receives custom data transfered via [downloadData](API_Server.md?id=downloaddata) by the server.
 
 
 ```javascript
@@ -305,9 +304,9 @@ API.onHudVisibilityChange.connect((visible) => {
 [[Category:Client Side Javascript]]
 This event triggers the first time a certain key is pressed, '''and if held down, it repeats after that.'''
 
-See [onKeyUp](Events.md?id=onkeyup) for more info on the raised event, and the <code>Keys.</code> list.
+See [onKeyUp](API_Client.md?id=onkeyup) for more info on the raised event, and the <code>Keys.</code> list.
 
-If you want to use this to catch game controls, consider using [isControlJustPressed]() instead, which matches up with bindings on both keyboard and gamepad.
+If you want to use this to catch game controls, consider using [isControlJustPressed](API_Client.md?id=iscontroljustpressed) instead, which matches up with bindings on both keyboard and gamepad.
 
 
 ```javascript
@@ -426,7 +425,7 @@ private void OnPlayerArmorChangeHandler(Client entity, int oldValue)
 
 
 ## OnPlayerBeginConnect
-This type of event is used for handling code at client connection initiation with the server, this event happens before [onPlayerConnected](Events.md?id=onplayerconnected)
+This type of event is used for handling code at client connection initiation with the server, this event happens before [onPlayerConnected](API_Server.md?id=onplayerconnected)
 
 
 !> **TODO: ** Add Syntax
@@ -441,7 +440,7 @@ This type of event is used for handling code at client connection initiation wit
 ```
 Warnings
 
-Do not use [setEntityData]() or similar functions in this event as the entity is not yet created.
+Do not use [setEntityData](API_Server.md?id=setentitydata) or similar functions in this event as the entity is not yet created.
 
 
 ## OnPlayerChangeVehicleSeat
@@ -452,7 +451,7 @@ This type event is called when a player changes his vehicle seat.
 !> **TODO: ** Add Syntax
 !> **TODO: ** Add usage example!
 ## OnPlayerConnected
-This type of event is used for handling code after the [onPlayerBeginConnect](Events.md?id=onplayerbeginconnect) event has completed, this event happens while downloading maps, scripts, etc.
+This type of event is used for handling code after the [onPlayerBeginConnect](API_Server.md?id=onplayerbeginconnect) event has completed, this event happens while downloading maps, scripts, etc.
 
 
 !> **TODO: ** Add Syntax
@@ -583,7 +582,7 @@ API.onPlayerExitVehicle.connect(function(veh, fromSeat) {
 ```
 
 ## OnPlayerFinishedDownload
-This type of event is used for handling code after the [onPlayerConnected](Events.md?id=onplayerconnected) event has completed, this is the final connection step when you finally spawn.
+This type of event is used for handling code after the [onPlayerConnected](API_Server.md?id=onplayerconnected) event has completed, this is the final connection step when you finally spawn.
 
 '''Notes:'''
 * This event will not be called if the server has no additional resources that have been downloaded.
@@ -797,7 +796,7 @@ This event is triggered when a resource stops.
 
 private void OnServerResourceStopHandler(string resource)
 {
-    //Code
+    // Code
 }
 
 ```
