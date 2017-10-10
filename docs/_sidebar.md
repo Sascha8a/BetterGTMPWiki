@@ -7,5 +7,4 @@
 - Properties
   - [Player](entities/Player.md)
   - [Vehicle](entities/Vehicle.md)
-- Guides
-  - [Getting started](Guides.md)
+- [Guides](Guides.md)
