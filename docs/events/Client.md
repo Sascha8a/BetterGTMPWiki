@@ -52,7 +52,7 @@ An example for replacing a word in chat
 
 ## OnCustomDataReceived
 
-Called when the client receives custom data transfered via [downloadData]() by the server.
+Called when the client receives custom data transfered via [downloadData](API_Server.md?id=downloaddata) by the server.
 
 
 ```javascript
@@ -216,9 +216,9 @@ API.onHudVisibilityChange.connect((visible) => {
 [[Category:Client Side Javascript]]
 This event triggers the first time a certain key is pressed, '''and if held down, it repeats after that.'''
 
-See [onKeyUp](Events.md?id=onkeyup) for more info on the raised event, and the <code>Keys.</code> list.
+See [onKeyUp](API_Client.md?id=onkeyup) for more info on the raised event, and the <code>Keys.</code> list.
 
-If you want to use this to catch game controls, consider using [isControlJustPressed]() instead, which matches up with bindings on both keyboard and gamepad.
+If you want to use this to catch game controls, consider using [isControlJustPressed](API_Client.md?id=iscontroljustpressed) instead, which matches up with bindings on both keyboard and gamepad.
 
 
 ```javascript

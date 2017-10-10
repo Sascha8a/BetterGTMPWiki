@@ -236,7 +236,7 @@ private void OnPlayerArmorChangeHandler(Client entity, int oldValue)
 
 
 ## OnPlayerBeginConnect
-This type of event is used for handling code at client connection initiation with the server, this event happens before [onPlayerConnected](Events.md?id=onplayerconnected)
+This type of event is used for handling code at client connection initiation with the server, this event happens before [onPlayerConnected](API_Server.md?id=onplayerconnected)
 
 
 !> **TODO: ** Add Syntax
@@ -251,7 +251,7 @@ This type of event is used for handling code at client connection initiation wit
 ```
 Warnings
 
-Do not use [setEntityData]() or similar functions in this event as the entity is not yet created.
+Do not use [setEntityData](API_Server.md?id=setentitydata) or similar functions in this event as the entity is not yet created.
 
 
 ## OnPlayerChangeVehicleSeat
@@ -262,7 +262,7 @@ This type event is called when a player changes his vehicle seat.
 !> **TODO: ** Add Syntax
 !> **TODO: ** Add usage example!
 ## OnPlayerConnected
-This type of event is used for handling code after the [onPlayerBeginConnect](Events.md?id=onplayerbeginconnect) event has completed, this event happens while downloading maps, scripts, etc.
+This type of event is used for handling code after the [onPlayerBeginConnect](API_Server.md?id=onplayerbeginconnect) event has completed, this event happens while downloading maps, scripts, etc.
 
 
 !> **TODO: ** Add Syntax
@@ -393,7 +393,7 @@ API.onPlayerExitVehicle.connect(function(veh, fromSeat) {
 ```
 
 ## OnPlayerFinishedDownload
-This type of event is used for handling code after the [onPlayerConnected](Events.md?id=onplayerconnected) event has completed, this is the final connection step when you finally spawn.
+This type of event is used for handling code after the [onPlayerConnected](API_Server.md?id=onplayerconnected) event has completed, this is the final connection step when you finally spawn.
 
 '''Notes:'''
 * This event will not be called if the server has no additional resources that have been downloaded.
@@ -580,7 +580,7 @@ This event is triggered when a resource stops.
 
 private void OnServerResourceStopHandler(string resource)
 {
-    //Code
+    // Code
 }
 
 ```
