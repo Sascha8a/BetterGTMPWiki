@@ -67,6 +67,7 @@ using GrandTheftMultiplayer.Server.Elements;
 | customScripts| Dictionary<string, string> | Read-Only | List of all active custom scripts. Script-filename (key), script hash (value) |
 
 ClientSideScriptVersion
+```
  Unknown = 0,
  VERSION_0_6 = 1,
  VERSION_0_6_1 = 2,
@@ -74,8 +75,10 @@ ClientSideScriptVersion
  VERSION_0_8_1 = 4,
  VERSION_0_9 = 5,
  VERSION_1_0 = 6
+ ```
 
 GameVersion
+```
  Unknown = -1,
  v1_0_335_2_Steam = 0,
  v1_0_335_2_NoSteam = 1,
@@ -113,255 +116,251 @@ GameVersion
  v1_0_1032_1_NoSteam = 33,
  v1_0_1103_2_Steam = 34,
  v1_0_1103_2_NoSteam = 35,
+ ```
 
 == Client (Player) Methods ==
-{| class="wikitable"
-|-
-! Name !! Return !! Parameters !! Description
-|-
-| get_handle() || ''GrandTheftMultiplayer.Shared.NetHandle'' || || Getter of handle attribute.
-|-
-| get_vehicle() || ''GrandTheftMultiplayer.Server.Elements.Vehicle'' || || Getter of vehicle attribute.
-|-
-| get_isInVehicle() || Boolean || || Getter of isInVehicle attribute.
-|-
-| get_vehicleSeat() || Int32 || || Getter of vehicleSeat attribute.
-|-
-| get_team() || Int32  || || Getter of team attribute.
-|-
-| get_ping() || Int32  || || Getter of ping attribute.
-|-
-| get_wantedLevel() || Int32 || || Getter of wantedLevel attribute.
-|-
-| get_name() || String  || || Getter of name attribute.
-|-
-| get_socialClubName() || String || || Getter of socialClubName attribute.
-|-
-| get_isCEFenabled() || Boolean || || Getter of isCEFenabled attribute.
-|-
-| get_velocity() || ''GrandTheftMultiplayer.Shared.Math.Vector3'' || || Getter of velocity attribute.
-|-
-| get_weapons() || ''GrandTheftMultiplayer.Shared.WeaponHash[]'' || || Getter of weapons attribute.
-|-
-| get_currentWeapon() || ''GrandTheftMultiplayer.Shared.WeaponHash'' || || Getter of currentWeapon attribute.
-|-
-| get_address() || String || || Getter of address attribute.
-|-
-| get_seatbelt() || Boolean || || Getter of seatbelt attribute.
-|-
-| get_health() || Int32 || || Getter of health attribute.
-|-
-| get_armor() || Int32 || || Getter of armor attribute.
-|-
-| get_onFire() || Boolean || || Getter of onFire attribute.
-|-
-| get_isParachuting() || Boolean || || Getter of isParachuting attribute.
-|-
-| get_inFreefall() || Boolean || || Getter of inFreefall attribute.
-|-
-| get_isAiming() || Boolean || || Getter of isAiming attribute.
-|-
-| get_isShooting() || Boolean || || Getter of isShooting attribute.
-|-
-| get_isReloading() || Boolean || || Getter of isReloading attribute.
-|-
-| get_isInCover() || Boolean || || Getter of isInCover attribute.
-|-
-| get_isOnLadder() || Boolean || || Getter of isOnLadder attribute.
-|-
-| get_aimingPoint() || ''GrandTheftMultiplayer.Shared.Math.Vector3'' || || Getter of aimingPoint attribute.
-|-
-| get_dead() || Boolean || || Getter of dead attribute.
-|-
-| get_nametag() || String || || Getter of nametag attribute.
-|-
-| get_nametagVisible() || Boolean || || Getter of nametagVisible attribute.
-|-
-| get_nametagColor() || ''GrandTheftMultiplayer.Server.Constant.Color'' || || Getter of nametagColor attribute.
-|-
-| get_spectating() || Boolean || || Getter of spectating attribute.
-|-
-| get_position() || ''GrandTheftMultiplayer.Shared.Math.Vector3'' || || Getter of position attribute.
-|-
-| get_rotation() || ''GrandTheftMultiplayer.Shared.Math.Vector3'' || || Getter of rotation attribute.
-|-
-| get_IsNull() || Boolean || || Getter of IsNull attribute.
-|-
-| get_exists() || Boolean  || || Getter of exists attribute.
-|-
-| get_type() || ''GrandTheftMultiplayer.Shared.EntityType'' || || Getter of type attribute.
-|-
-| get_transparency() || Int32 || || Getter of transparency attribute.
-|-
-| get_dimension() || Int32 || || Getter of dimension attribute.
-|-
-| get_invincible() || Boolean || || Getter of invincible attribute.
-|-
-| get_collisionless() || Boolean || || Getter of collisionless attribute.
-|-
-| get_model() || Int32 || || Getter of model attribute.
-|-
-| ban() || Void || || Ban the client(player).
-|-
-| ban() || Void || String reason || Ban the client(player) with a reason.
-|-
-| freeze() || Void || Boolean freeze || Freeze the player.
-|-
-| ban() || Void || String reason || Ban the client(player) with a reason.
-|-
-| kill() || Void ||  || Kill the player ?
-|-
-| detonateStickies() || Void || || ?
-|-
-| resetNametag() || Void || || ?
-|-
-| resetNametagColor() || Void || || ?
-|-
-| spectate() || Void || || ?
-|-
-| spectate() || Void || ''GrandTheftMultiplayer.Server.Elements.Client'' player || ?
-|-
-| stopSpectating() || Void || || ?
-|-
-| set_freezePosition() || Void || Boolean value || ?
-|-
-| set_position() || Void || ''GrandTheftMultiplayer.Shared.Math.Vector3'' value || ?
-|-
-| set_rotation() || Void || ''GrandTheftMultiplayer.Shared.Math.Vector3'' value || ?
-|-
-| set_transparency() || Void || Int32 value || ?
-|-
-| set_dimension() || Void || Int32 value || ?
-|-
-| set_invincible() || Void || Boolean value || ?
-|-
-| set_collisionless() || Void || Boolean value || ?
-|-
-| delete() || Void || || ?
-|-
-| movePosition() || Void || ''GrandTheftMultiplayer.Shared.Math.Vector3'' target , Int32 duration || ?
-|-
-| moveRotation() || Void || ''GrandTheftMultiplayer.Shared.Math.Vector3'' target ,Int32 duration 
-|-
-| attachTo() || Void || ''GrandTheftMultiplayer.Shared.NetHandle'' entity  ,String bone , ''GrandTheftMultiplayer.Shared.Math.Vector3'' offset , ''GrandTheftMultiplayer.Shared.Math.Vector3'' rotation  || ?
-|-
-| detach() || Void || || ?
-|-
-| detach() || Void || Boolean resetCollision || ?
-|-
-| createParticleEffect() || Void || String ptfxLib ,String ptfxName ,''GrandTheftMultiplayer.Shared.Math.Vector3'' offset ,''GrandTheftMultiplayer.Shared.Math.Vector3'' rotation ,''System.Single'' scale ,Int32 bone || ?
-|-
-| setSyncedData() || Void || String key , ''System.Object'' value  || ?
-|-
-| getSyncedData() || ''System.Object'' || String  key || ?
-|-
-| resetSyncedData() || Void || String key || ?
-|-
-| hasSyncedData() || Boolean || String key || ?
-|-
-| setData() || Void || String key ,''System.Object'' value || ?
-|-
-| getData() || ''System.Object'' || String key || ?
-|-
-| resetData() || Void || String key || ?
-|-
-| hasData() || Boolean || String key || ?
-|-
-| set_handle() || Void || ''GrandTheftMultiplayer.Shared.NetHandle'' value || ?
-|-
-| op_Implicit() || ''GrandTheftMultiplayer.Shared.NetHandle'' || ''GrandTheftMultiplayer.Server.Elements.Client'' c  || ?
-|-
-| Equals() || Boolean || ''System.Object'' obj  || ?
-|-
-| op_Equality() || Boolean || ''GrandTheftMultiplayer.Server.Elements.Client'' left ,''GrandTheftMultiplayer.Server.Elements.Client'' right  || ?
-|-
-| op_Inequality() || Boolean || ''GrandTheftMultiplayer.Server.Elements.Client'' left ,''GrandTheftMultiplayer.Server.Elements.Client'' right || ?
-|-
-| set_team() || Void || Int32 value || ?
-|-
-| set_wantedLevel || Void || Int32 value || ?
-|-
-| set_name() || Void || String value || ?
-|-
-| set_velocity() || Void || ''GrandTheftMultiplayer.Shared.Math.Vector3'' value  || ?
-|-
-| set_seatbelt() || Void || Boolean value || ?
-|-
-| set_health() || Void || Int32 value || ?
-|-
-| set_armor() || Void || Int32 value || ?
-|-
-| set_nametag() || Void || String value || ?
-|-
-| set_nametagVisible() || Void || Boolean value || ?
-|-
-| set_nametagColor() || Void || ''GrandTheftMultiplayer.Server.Constant.Color'' value  || ?
-|-
-| sendChatMessage() || Void || String message || ?
-|-
-| sendChatMessage() || Void || String sender ,String message || ?
-|-
-| setIntoVehicle() || Void || ''GrandTheftMultiplayer.Shared.NetHandle'' car ,Int32 seat || ?
-|-
-| warpOutOfVehicle() || Void || ''GrandTheftMultiplayer.Shared.NetHandle'' car || ?
-|-
-| setSkin() || Void || ''GrandTheftAuto.Server.Constant.PedHash'' newSkin   || Setter of skin attribute
-|-
-| setDefaultClothes() || Void ||  || ?
-|-
-| playAnimation() || Void || String animDict ,String animName ,Int32 flag || ?
-|-
-| playScenario() || Void || String scenarioName || ?
-|-
-| stopAnimation() || Void ||  || ?
-|-
-| setClothes() || Void || Int32 slot ,Int32 drawable ,Int32 texture || ?
-|-
-| setAccessories() || Void || Int32 slot ,Int32 drawable ,Int32 texture || ?
-|-
-| getClothesDrawable() || Int32 || Int32 slot || ?
-|-
-| getClothesTexture() || Int32 || Int32 slot || ?
-|-
-| getAccessoryDrawable() || Int32 || Int32 slot || ?
-|-
-| getAccessoryTexture() || Int32 || Int32 slot || ?
-|-
-| clearAccessory() || Void || Int32 slot || ?
-|-
-| giveWeapon() || Void || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,Int32 ammo,Boolean equipNow ,Boolean ammoLoaded || ?
-|-
-| removeWeapon() || Void || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon  || ?
-|-
-| removeAllWeapons() || Void ||  || ?
-|-
-| setWeaponTint() || Void || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponTint'' tint  || ?
-|-
-| getWeaponTint() || ''GrandTheftMultiplayer.Server.Constant.WeaponTint'' || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon  || ?
-|-
-| setWeaponComponent() || Void || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponComponent'' component || ?
-|-
-| removeWeaponComponent() || Void || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponComponent'' component || ?
-|-
-| hasGotWeaponComponent() || Boolean || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponComponent'' component || ?
-|-
-| GetAllWeaponComponents() || ''GrandTheftMultiplayer.Server.Constant.WeaponComponent[]'' || ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon || ?
-|-
-| kick() || Void ||  || ?
-|-
-| kick() || Void || String reason || ?
-|-
-| ToString() || String ||  || ?
-|-
-| GetHashCode() || Int32 || || ?
-|-
-| GetType() || ''System.Type'' || || ?
-|}
+| Name | Return | Parameters | Description |
+|---|---|---|---|
+| get_handle() | ''GrandTheftMultiplayer.Shared.NetHandle'' | | Getter of handle attribute. |
 
-==Usage example(s)==
+| get_vehicle() | ''GrandTheftMultiplayer.Server.Elements.Vehicle'' | | Getter of vehicle attribute. |
 
-'''.invincible'''
-<syntaxhighlight lang="C#" >
+| get_isInVehicle() | Boolean | | Getter of isInVehicle attribute. |
+
+| get_vehicleSeat() | Int32 | | Getter of vehicleSeat attribute. |
+
+| get_team() | Int32  | | Getter of team attribute. |
+
+| get_ping() | Int32  | | Getter of ping attribute. |
+
+| get_wantedLevel() | Int32 | | Getter of wantedLevel attribute. |
+
+| get_name() | String  | | Getter of name attribute. |
+
+| get_socialClubName() | String | | Getter of socialClubName attribute. |
+
+| get_isCEFenabled() | Boolean | | Getter of isCEFenabled attribute. |
+
+| get_velocity() | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | | Getter of velocity attribute. |
+
+| get_weapons() | ''GrandTheftMultiplayer.Shared.WeaponHash[]'' | | Getter of weapons attribute. |
+
+| get_currentWeapon() | ''GrandTheftMultiplayer.Shared.WeaponHash'' | | Getter of currentWeapon attribute. |
+
+| get_address() | String | | Getter of address attribute. |
+
+| get_seatbelt() | Boolean | | Getter of seatbelt attribute. |
+
+| get_health() | Int32 | | Getter of health attribute. |
+
+| get_armor() | Int32 | | Getter of armor attribute. |
+
+| get_onFire() | Boolean | | Getter of onFire attribute. |
+
+| get_isParachuting() | Boolean | | Getter of isParachuting attribute. |
+
+| get_inFreefall() | Boolean | | Getter of inFreefall attribute. |
+
+| get_isAiming() | Boolean | | Getter of isAiming attribute. |
+
+| get_isShooting() | Boolean | | Getter of isShooting attribute. |
+
+| get_isReloading() | Boolean | | Getter of isReloading attribute. |
+
+| get_isInCover() | Boolean | | Getter of isInCover attribute. |
+
+| get_isOnLadder() | Boolean | | Getter of isOnLadder attribute. |
+
+| get_aimingPoint() | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | | Getter of aimingPoint attribute. |
+
+| get_dead() | Boolean | | Getter of dead attribute. |
+
+| get_nametag() | String | | Getter of nametag attribute. |
+
+| get_nametagVisible() | Boolean | | Getter of nametagVisible attribute. |
+
+| get_nametagColor() | ''GrandTheftMultiplayer.Server.Constant.Color'' | | Getter of nametagColor attribute. |
+
+| get_spectating() | Boolean | | Getter of spectating attribute. |
+
+| get_position() | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | | Getter of position attribute. |
+
+| get_rotation() | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | | Getter of rotation attribute. |
+
+| get_IsNull() | Boolean | | Getter of IsNull attribute. |
+
+| get_exists() | Boolean  | | Getter of exists attribute. |
+
+| get_type() | ''GrandTheftMultiplayer.Shared.EntityType'' | | Getter of type attribute. |
+
+| get_transparency() | Int32 | | Getter of transparency attribute. |
+
+| get_dimension() | Int32 | | Getter of dimension attribute. |
+
+| get_invincible() | Boolean | | Getter of invincible attribute. |
+
+| get_collisionless() | Boolean | | Getter of collisionless attribute. |
+
+| get_model() | Int32 | | Getter of model attribute. |
+
+| ban() | Void | | Ban the client(player). |
+
+| ban() | Void | String reason | Ban the client(player) with a reason. |
+
+| freeze() | Void | Boolean freeze | Freeze the player. |
+
+| ban() | Void | String reason | Ban the client(player) with a reason. |
+
+| kill() | Void |  | Kill the player ? |
+
+| detonateStickies() | Void | | ? |
+
+| resetNametag() | Void | | ? |
+
+| resetNametagColor() | Void | | ? |
+
+| spectate() | Void | | ? |
+
+| spectate() | Void | ''GrandTheftMultiplayer.Server.Elements.Client'' player | ? |
+
+| stopSpectating() | Void | | ? |
+
+| set_freezePosition() | Void | Boolean value | ? |
+
+| set_position() | Void | ''GrandTheftMultiplayer.Shared.Math.Vector3'' value | ? |
+
+| set_rotation() | Void | ''GrandTheftMultiplayer.Shared.Math.Vector3'' value | ? |
+
+| set_transparency() | Void | Int32 value | ? |
+
+| set_dimension() | Void | Int32 value | ? |
+
+| set_invincible() | Void | Boolean value | ? |
+
+| set_collisionless() | Void | Boolean value | ? |
+
+| delete() | Void | | ? |
+
+| movePosition() | Void | ''GrandTheftMultiplayer.Shared.Math.Vector3'' target , Int32 duration | ? |
+
+| moveRotation() | Void | ''GrandTheftMultiplayer.Shared.Math.Vector3'' target ,Int32 duration 
+
+| attachTo() | Void | ''GrandTheftMultiplayer.Shared.NetHandle'' entity  ,String bone , ''GrandTheftMultiplayer.Shared.Math.Vector3'' offset , ''GrandTheftMultiplayer.Shared.Math.Vector3'' rotation  | ? |
+
+| detach() | Void | | ? |
+
+| detach() | Void | Boolean resetCollision | ? |
+
+| createParticleEffect() | Void | String ptfxLib ,String ptfxName ,''GrandTheftMultiplayer.Shared.Math.Vector3'' offset ,''GrandTheftMultiplayer.Shared.Math.Vector3'' rotation ,''System.Single'' scale ,Int32 bone | ? |
+
+| setSyncedData() | Void | String key , ''System.Object'' value  | ? |
+
+| getSyncedData() | ''System.Object'' | String  key | ? |
+
+| resetSyncedData() | Void | String key | ? |
+
+| hasSyncedData() | Boolean | String key | ? |
+
+| setData() | Void | String key ,''System.Object'' value | ? |
+
+| getData() | ''System.Object'' | String key | ? |
+
+| resetData() | Void | String key | ? |
+
+| hasData() | Boolean | String key | ? |
+
+| set_handle() | Void | ''GrandTheftMultiplayer.Shared.NetHandle'' value | ? |
+
+| op_Implicit() | ''GrandTheftMultiplayer.Shared.NetHandle'' | ''GrandTheftMultiplayer.Server.Elements.Client'' c  | ? |
+
+| Equals() | Boolean | ''System.Object'' obj  | ? |
+
+| op_Equality() | Boolean | ''GrandTheftMultiplayer.Server.Elements.Client'' left ,''GrandTheftMultiplayer.Server.Elements.Client'' right  | ? |
+
+| op_Inequality() | Boolean | ''GrandTheftMultiplayer.Server.Elements.Client'' left ,''GrandTheftMultiplayer.Server.Elements.Client'' right | ? |
+
+| set_team() | Void | Int32 value | ? |
+
+| set_wantedLevel | Void | Int32 value | ? |
+
+| set_name() | Void | String value | ? |
+
+| set_velocity() | Void | ''GrandTheftMultiplayer.Shared.Math.Vector3'' value  | ? |
+
+| set_seatbelt() | Void | Boolean value | ? |
+
+| set_health() | Void | Int32 value | ? |
+
+| set_armor() | Void | Int32 value | ? |
+
+| set_nametag() | Void | String value | ? |
+
+| set_nametagVisible() | Void | Boolean value | ? |
+
+| set_nametagColor() | Void | ''GrandTheftMultiplayer.Server.Constant.Color'' value  | ? |
+
+| sendChatMessage() | Void | String message | ? |
+
+| sendChatMessage() | Void | String sender ,String message | ? |
+
+| setIntoVehicle() | Void | ''GrandTheftMultiplayer.Shared.NetHandle'' car ,Int32 seat | ? |
+
+| warpOutOfVehicle() | Void | ''GrandTheftMultiplayer.Shared.NetHandle'' car | ? |
+
+| setSkin() | Void | ''GrandTheftAuto.Server.Constant.PedHash'' newSkin   | Setter of skin attribute
+
+| setDefaultClothes() | Void |  | ? |
+
+| playAnimation() | Void | String animDict ,String animName ,Int32 flag | ? |
+
+| playScenario() | Void | String scenarioName | ? |
+
+| stopAnimation() | Void |  | ? |
+
+| setClothes() | Void | Int32 slot ,Int32 drawable ,Int32 texture | ? |
+
+| setAccessories() | Void | Int32 slot ,Int32 drawable ,Int32 texture | ? |
+
+| getClothesDrawable() | Int32 | Int32 slot | ? |
+
+| getClothesTexture() | Int32 | Int32 slot | ? |
+
+| getAccessoryDrawable() | Int32 | Int32 slot | ? |
+
+| getAccessoryTexture() | Int32 | Int32 slot | ? |
+
+| clearAccessory() | Void | Int32 slot | ? |
+
+| giveWeapon() | Void | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,Int32 ammo,Boolean equipNow ,Boolean ammoLoaded | ? |
+
+| removeWeapon() | Void | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon  | ? |
+
+| removeAllWeapons() | Void |  | ? |
+
+| setWeaponTint() | Void | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponTint'' tint  | ? |
+
+| getWeaponTint() | ''GrandTheftMultiplayer.Server.Constant.WeaponTint'' | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon  | ? |
+
+| setWeaponComponent() | Void | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponComponent'' component | ? |
+
+| removeWeaponComponent() | Void | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponComponent'' component | ? |
+
+| hasGotWeaponComponent() | Boolean | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon ,''GrandTheftMultiplayer.Server.Constant.WeaponComponent'' component | ? |
+
+| GetAllWeaponComponents() | ''GrandTheftMultiplayer.Server.Constant.WeaponComponent[]'' | ''GrandTheftMultiplayer.Shared.WeaponHash'' weapon | ? |
+
+| kick() | Void |  | ? |
+
+| kick() | Void | String reason | ? |
+
+| ToString() | String |  | ? |
+
+| GetHashCode() | Int32 | | ? |
+
+| GetType() | ''System.Type'' | | ? |
+
+## Usage example(s)
+```csharp
 [Command("godmode")]
 public void GodMode(Client player) {
 	if(player.invincible) {
@@ -372,5 +371,5 @@ public void GodMode(Client player) {
 		API.sendChatMessageToPlayer(player, "GodMode Enabled!");
 	}
 }
-</syntaxhighlight>
+```
 
