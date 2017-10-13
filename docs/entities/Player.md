@@ -118,15 +118,12 @@ GameVersion
  v1_0_1103_2_NoSteam = 35,
  ```
 
-== Client (Player) Methods ==
+## Client (Player) Methods
 | Name | Return | Parameters | Description |
 |---|---|---|---|
 | get_handle() | ''GrandTheftMultiplayer.Shared.NetHandle'' | | Getter of handle attribute. |
-
 | get_vehicle() | ''GrandTheftMultiplayer.Server.Elements.Vehicle'' | | Getter of vehicle attribute. |
-
 | get_isInVehicle() | Boolean | | Getter of isInVehicle attribute. |
-
 | get_vehicleSeat() | Int32 | | Getter of vehicleSeat attribute. |
 
 | get_team() | Int32  | | Getter of team attribute. |
