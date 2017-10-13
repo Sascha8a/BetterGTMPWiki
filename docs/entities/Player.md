@@ -1,21 +1,18 @@
 # Client Class
 
-The '''Client''' class represent a player in your server.
+The **Client** class represent a player in your server.
 
 Client inherits the Entity class.
 
 ## Using
+**GrandTheftMultiplayer.Server.Elements**
 
-'''GrandTheftMultiplayer.Server.Elements'''
-
-<syntaxhighlight lang="C#" >
-
+```csharp
 using GrandTheftMultiplayer.Server.Elements;
+```
 
-</syntaxhighlight>
 
-
-== Client (Player) Properties ==
+## Client (Player) Properties
 
 {| class="wikitable"
 |-
