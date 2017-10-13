@@ -16,103 +16,55 @@ using GrandTheftMultiplayer.Server.Elements;
 | Name | Type | Accessibility  | Description  |
 |---|---|---|---|
 | handle | ''GrandTheftMultiplayer.Shared.NetHandle'' | Writeable | Handle of the player. |
-| vehicle | ''GrandTheftMultiplayer.Server.Elements.Vehicle'' | Read-Only | Get the current vehicle of the player
-|
-| isInVehicle | Boolean | Read-Only | True or false if the player is in a vehicle or not.
-|
-| vehicleSeat | Int32 | Read-Only | Number of vehicle seat where the player is sitting.
-|
-| team | Int32 | Writeable | Get or set the player's team-number.
-|
-| ping | Int32 | Read-Only | Gets the player ping in milliseconds.
-|
-| wantedLevel | Int32 | Writeable | Wanted level of player.
-|
-| name | String | Writeable | The player's name.
-|
-| socialClubName | String | Read-Only | Player's Social Club name. (NOTE: Can be changed and/or spoofed!)
-|
-| isCEFenabled | Boolean | Read-Only | True or False if the Client has CEF is enabled or not
-|
-| isMediaStreamEnabled | Boolean | Read-Only | True or False if the Client has Media Stream (Mic, Webcam, ...) is enabled or not
-|
-| velocity | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Writeable  | Get (and set?) the player's current velocity.
-|
-| weapons | ''GrandTheftMultiplayer.Shared.WeaponHash[]'' | Read-Only | Array of weapons the player has.
-|
-| currentWeapon | ''GrandTheftMultiplayer.Shared.WeaponHash'' | Read-Only | Get (and set?) which weapon the player is currently holding.
-|
-| address | String | Read-Only | Player IP-address.
-|
-| seatbelt | Boolean | Writeable | Get (and set?) True or False wether player is wearing a seatbelt or not.
-|
-| health | Int32 | Writeable | Get and set the player's health.
-|
-| armor | Int32 | Writeable | Get and set the player's armor.
-|
-| onFire | Boolean | Read-Only | True or False if the player is on fire or not.
-|
-| isParachuting | Boolean | Read-Only | True or False if the player is parachuting or not.
-|
-| inFreefall | Boolean | Read-Only | True or False if the player is in a free fall or not.
-|
-| isAiming | Boolean | Read-Only | True or False if the player is aiming or not.
-|
-| isShooting | Boolean | Read-Only | True or False if the player is shooting or not.
-|
-| isReloading | Boolean | Read-Only | True or False if the player is reloading or not.
-|
-| isInCover | Boolean | Read-Only | True or False if the player is covering or not.
-|
-| isOnLadder | Boolean | Read-Only | True or False if the player is on a ladder or not.
-|
-| aimingPoint | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Read-Only | Coordinates of where the player's is aiming.
-|
-| dead | Boolean | Read-Only | True or False when the player is dead or not.
-|
-| nametag | String | Writeable | Text on the player's "3d label".
-|
-| nametagVisible | Boolean | Writeable | Get or Set wether the player's "3d label" should be visible or not.
-|
-| nametagColor | ''GrandTheftMultiplayer.Server.Constant.Color'' | Writeable | The color of the player's "3d label".
-|
-| spectating | Boolean | Read-Only | True or False if the player is on spectating or not.
-|
-| freezePosition | Boolean | Writeable | True or False if the player is frozen or not. (Not readable ?)
-|
-| position | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Writeable | Get or set the coordinates of the player's position.
-|
-| rotation | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Writeable | Get or set the coordinates of the player's rotation (view-angle).
-|
-| IsNull | Boolean | Read-Only | TBD
-|
-| exists | Boolean | Read-Only | TBD
-|
-| type | ''GrandTheftMultiplayer.Shared.EntityType'' | Read-Only | TBD
-|
-| transparency | Int32 | Writeable | Transparency of the player model.
-|
-| dimension | Int32 | Writeable | Get or set a player's virtual world.
-|
-| invincible | Boolean | Writeable | Sets a player invincible as in passive mode.
-|
-| collisionless | Boolean | Writeable | No collisions with other objects, not even the ground. Useful for a "free-fly" mode.
-|
-| model | Int32 | Read-Only | "Skin" of the player.
-|
-| uniqueHardwareId | String | Read-Only | Returns the Unique Hardware Id of the Client '''(Next Update)'''
-|
-| scriptVersion | int | Read-Only | Client Side script version the client runs Client '''(Next Update)'''
-|
-| version | String | Read-Only | GT-MP version the client runs '''(Next Update)'''
-|
-| gameVersion | int | Read-Only | GTA 5 gameversion the client runs, int represents ScripthookVDotNet enum position '''(Next Update)'''
-|
-| activeAsis| Dictionary<string, string> | Read-Only | List of all active ASI-files. ASI name (key), ASI hash (value) '''(Next Update)'''
-|
-| modDlcPacks| Dictionary<string, string> | Read-Only | List of all active mod DLC-packs. DLC-pack name (key), DLC-pack hash (value)  '''(Next Update)'''
-|
-| customScripts| Dictionary<string, string> | Read-Only | List of all active custom scripts. Script-filename (key), script hash (value)  '''(Next Update)'''
+| vehicle | ''GrandTheftMultiplayer.Server.Elements.Vehicle'' | Read-Only | Get the current vehicle of the player |
+| isInVehicle | Boolean | Read-Only | True or false if the player is in a vehicle or not. |
+| vehicleSeat | Int32 | Read-Only | Number of vehicle seat where the player is sitting. |
+| team | Int32 | Writeable | Get or set the player's team-number. |
+| ping | Int32 | Read-Only | Gets the player ping in milliseconds. |
+| wantedLevel | Int32 | Writeable | Wanted level of player. |
+| name | String | Writeable | The player's name. |
+| socialClubName | String | Read-Only | Player's Social Club name. (NOTE: Can be changed and/or spoofed!) |
+| isCEFenabled | Boolean | Read-Only | True or False if the Client has CEF is enabled or not |
+| isMediaStreamEnabled | Boolean | Read-Only | True or False if the Client has Media Stream (Mic, Webcam, ...) is enabled or not |
+| velocity | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Writeable  | Get (and set?) the player's current velocity. |
+| weapons | ''GrandTheftMultiplayer.Shared.WeaponHash[]'' | Read-Only | Array of weapons the player has. |
+| currentWeapon | ''GrandTheftMultiplayer.Shared.WeaponHash'' | Read-Only | Get (and set?) which weapon the player is currently holding. |
+| address | String | Read-Only | Player IP-address. |
+| seatbelt | Boolean | Writeable | Get (and set?) True or False wether player is wearing a seatbelt or not. |
+| health | Int32 | Writeable | Get and set the player's health. |
+| armor | Int32 | Writeable | Get and set the player's armor. |
+| onFire | Boolean | Read-Only | True or False if the player is on fire or not. |
+| isParachuting | Boolean | Read-Only | True or False if the player is parachuting or not. |
+| inFreefall | Boolean | Read-Only | True or False if the player is in a free fall or not. |
+| isAiming | Boolean | Read-Only | True or False if the player is aiming or not. |
+| isShooting | Boolean | Read-Only | True or False if the player is shooting or not. |
+| isReloading | Boolean | Read-Only | True or False if the player is reloading or not. |
+| isInCover | Boolean | Read-Only | True or False if the player is covering or not. |
+| isOnLadder | Boolean | Read-Only | True or False if the player is on a ladder or not. |
+| aimingPoint | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Read-Only | Coordinates of where the player's is aiming. |
+| dead | Boolean | Read-Only | True or False when the player is dead or not. |
+| nametag | String | Writeable | Text on the player's "3d label". |
+| nametagVisible | Boolean | Writeable | Get or Set wether the player's "3d label" should be visible or not. |
+| nametagColor | ''GrandTheftMultiplayer.Server.Constant.Color'' | Writeable | The color of the player's "3d label". |
+| spectating | Boolean | Read-Only | True or False if the player is on spectating or not. |
+| freezePosition | Boolean | Writeable | True or False if the player is frozen or not. (Not readable ?) |
+| position | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Writeable | Get or set the coordinates of the player's position. |
+| rotation | ''GrandTheftMultiplayer.Shared.Math.Vector3'' | Writeable | Get or set the coordinates of the player's rotation (view-angle). |
+| IsNull | Boolean | Read-Only | TBD |
+| exists | Boolean | Read-Only | TBD |
+| type | ''GrandTheftMultiplayer.Shared.EntityType'' | Read-Only | TBD |
+| transparency | Int32 | Writeable | Transparency of the player model. |
+| dimension | Int32 | Writeable | Get or set a player's virtual world. |
+| invincible | Boolean | Writeable | Sets a player invincible as in passive mode. |
+| collisionless | Boolean | Writeable | No collisions with other objects, not even the ground. Useful for a "free-fly" mode. |
+| model | Int32 | Read-Only | "Skin" of the player. |
+| uniqueHardwareId | String | Read-Only | Returns the Unique Hardware Id of the Client '''(Next Update)''' |
+| scriptVersion | int | Read-Only | Client Side script version the client runs Client '''(Next Update)''' |
+| version | String | Read-Only | GT-MP version the client runs '''(Next Update)''' |
+| gameVersion | int | Read-Only | GTA 5 gameversion the client runs, int represents ScripthookVDotNet enum position '''(Next Update)''' |
+| activeAsis| Dictionary<string, string> | Read-Only | List of all active ASI-files. ASI name (key), ASI hash (value) '''(Next Update)''' |
+| modDlcPacks| Dictionary<string, string> | Read-Only | List of all active mod DLC-packs. DLC-pack name (key), DLC-pack hash (value) |
+| customScripts| Dictionary<string, string> | Read-Only | List of all active custom scripts. Script-filename (key), script hash (value) |
 
 ClientSideScriptVersion
  Unknown = 0,
