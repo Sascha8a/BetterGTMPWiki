@@ -15,6 +15,7 @@
 
 #### Draw related:
 - [Custom Scollbar with draw functions](https://gt-mp.net/forum/thread/1317-custom-scrollbar-with-draw-functions/)
+- [DrawFullText()](https://gt-mp.net/forum/thread/1344-drawfulltext/)
 
 #### Miscellaneous
 - [How to get callbacks from client side easily](https://gt-mp.net/forum/thread/765-how-to-get-callbacks-from-client-side-easily-using-api-getuserinput-as-an-exampl/)
