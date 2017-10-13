@@ -13,6 +13,11 @@ using GrandTheftMultiplayer.Server.Elements;
 
 
 ## Client (Player) Properties
+| Name | Type | Accessibility  | Description  |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
 
 {| class="wikitable"
 |-
