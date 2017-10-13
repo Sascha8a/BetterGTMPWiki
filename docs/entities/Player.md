@@ -15,8 +15,7 @@ using GrandTheftMultiplayer.Server.Elements;
 ## Client (Player) Properties
 | Name | Type | Accessibility  | Description  |
 |---|---|---|---|
-| handle | ''GrandTheftMultiplayer.Shared.NetHandle'' | Writeable | Handle of the player.
-|
+| handle | ''GrandTheftMultiplayer.Shared.NetHandle'' | Writeable | Handle of the player. |
 | vehicle | ''GrandTheftMultiplayer.Server.Elements.Vehicle'' | Read-Only | Get the current vehicle of the player
 |
 | isInVehicle | Boolean | Read-Only | True or false if the player is in a vehicle or not.
