@@ -1,18 +1,13 @@
 ## Vehicle class
-
-
-The *'Vehicle*' class represent a vehicle in your server.
+The **Vehicle** class represent a vehicle in your server.
 
 
 ## Using
+**GrandTheftMultiplayer.Server.Elements.Vehicle**
 
-*'GrandTheftMultiplayer.Server.Elements.Vehicle*'
-
-<syntaxhighlight lang="C#" >
-
+```csharp
 using GrandTheftMultiplayer.Server.Elements;
-
-</syntaxhighlight>
+```
 
 
 ## Vehicle Properties
