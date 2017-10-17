@@ -215,8 +215,7 @@
           hook.beforeEach(function (html) {
             var url = 'https://github.com/Sascha8a/BetterGTMPWiki/tree/master/docs/' + vm.route.file
             var editHtml = '[:memo: Edit on Github](' + url + ')\n'
-            return editHtml
-              + html
+            return html
               + '\n----\n'
               + 'Last modified {docsify-updated} '
               + editHtml

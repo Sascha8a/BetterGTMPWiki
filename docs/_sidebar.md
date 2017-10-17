@@ -4,6 +4,7 @@
   - [Server-side Events](events/Server.md)
   - [Client-side Events](events/Client.md)
   - [Shared Events](events/Shared.md)
+  - [Natives](http://dev-c.com/nativedb/func/)
 - Properties
   - [Player](entities/Player.md)
   - [Vehicle](entities/Vehicle.md)
