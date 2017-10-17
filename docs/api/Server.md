@@ -15,7 +15,6 @@ API.call(string className, string methodName, params object[] arguments);
 ```
 ### Usage example(s)
 ```csharp
-
 // Script1.cs
 public class Script1 : Script
 {
@@ -31,15 +30,12 @@ public class Script2 : Script
         API.call("Script1", "DoSomething", "argument 1", 2);
     }
 }
-
 ```
 
 Please note, if you're compiling your resource to .DLL, it's recommended to use C#'s <code>nameof()</code> function. This makes it easier to refactor class and method names, as it will throw an error if used on a method or class name that doesn't exist. Example:
 
 ```csharp
-
 API.call(nameof(Script1), nameof(Script1.DoSomething), "argument 1", 2);
-
 ```
 
 
@@ -55,7 +51,6 @@ API.consoleOutput(string text);
 API.consoleOutput("You should see me!");
 ```
 ```csharp
-
 API.consoleOutput(
         "(C) Currency: . . . . . . . . {0:C}\n" +
         "(D) Decimal:. . . . . . . . . {0:D}\n" +
@@ -68,7 +63,6 @@ API.consoleOutput(
         "(R) Round-trip: . . . . . . . {1:R}\n" +
         "(X) Hexadecimal:. . . . . . . {0:X}\n",
         -123, -123.45f); 
-
 ```
 
 
