@@ -1,3 +1,5 @@
+<meta author="Sascha" />
+
 # Contributors guide
 This wiki is completely open source and avaliable on github. Only with your help we are able to maintain a correct and updated version of all the functions in here. Please contribute! Suggestions are always appreciated and should be sent to sascha8a@localhost.systems
 * Finish documentation for incomplete functions.
